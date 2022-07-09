@@ -1,10 +1,10 @@
 [
     {
-        "name": "Диван RONALD",
+        "name": "RONALD диван",
         "img": "./static/sofa-ronald.jpg",
         "price": "90 000",
         "description": "Модель отличается простотой линий и форм, отсутствием броского декора",
-        "type": "диваны",
+        "type": "диван",
         "purpose": "гостиная",
         "color": "белый",
         "quantity": "3",
@@ -12,11 +12,11 @@
         "popular": "да"
     },
     {
-        "name": "Кровать TATRAN",
+        "name": "TATRAN кровать",
         "img": "./static/bed-tatran.jpg",
         "price": "80 000",
         "description": "Основание из полированной нержавеющей стали, придает оригинальный парящий эффект",
-        "type": "кровати",
+        "type": "кровать",
         "purpose": "спальня",
         "color": "коричневый",
         "quantity": "2",
@@ -24,11 +24,11 @@
         "popular": "да"
     },
     {
-        "name": "Кресло VILORA",
+        "name": "VILORA кресло",
         "img": "./static/armchair-vilora.jpg",
         "price": "21 000",
         "description": "Мягкое и уютное, аккуратное и стильное. Упругие подушки сиденья и приятная на ощупь ткань",
-        "type": "кресла",
+        "type": "кресло",
         "purpose": "гостиная",
         "color": "желтый",
         "quantity": "10",
@@ -36,11 +36,11 @@
         "popular": "нет"
     },
     {
-        "name": "Стол MENU",
+        "name": "MENU стол",
         "img": "./static/table-menu.jpg",
         "price": "34 000",
         "description": "Для того чтобы трапезничать было приятно, необходим правильный обеденный стол",
-        "type": "столы",
+        "type": "стол",
         "purpose": "столовая",
         "color": "коричневый",
         "quantity": "3",
@@ -48,11 +48,11 @@
         "popular": "да"
     },
     {
-        "name": "Диван ASKESTA",
+        "name": "ASKESTA диван",
         "img": "./static/sofa-askesta.jpg",
         "price": "68 000",
         "description": "Благодаря защелкивающемуся механизму диван легко раскладывается в комфортную кровать",
-        "type": "диваны",
+        "type": "диван",
         "purpose": "гостиная",
         "color": "серый",
         "quantity": "5",
@@ -60,11 +60,11 @@
         "popular": "да"
     },
     {
-        "name": "Кресло LUNAR",
+        "name": "LUNAR кресло",
         "img": "./static/armchair-lunar.jpg",
         "price": "40 000",
         "description": "Прекрасно переносит солнечные лучи, перепады влажности и любые осадки",
-        "type": "кресла",
+        "type": "кресло",
         "purpose": "гостиная",
         "color": "черный",
         "quantity": "7",
@@ -72,11 +72,11 @@
         "popular": "да"
     },
     {
-        "name": "Шкаф Nastan",
+        "name": "Nastan шкаф",
         "img": "./static/wardrobe-nastan.jpg",
         "price": "80 000",
         "description": "Мебель может быть оснащена разнообразными системами подсветки",
-        "type": "шкафы",
+        "type": "шкаф",
         "purpose": "спальня",
         "color": "коричневый",
         "quantity": "3",
@@ -84,11 +84,11 @@
         "popular": "нет"
     },
     {
-        "name": "Кресло ASKESTA",
+        "name": "ASKESTA кресло",
         "img": "./static/armchair-askesta.jpg",
         "price": "50 000",
         "description": "Высокоэластичный пенополиуретан в «начинке» кресла надежен и долговечен",
-        "type": "кресла",
+        "type": "кресло",
         "purpose": "гостиная",
         "color": "синий",
         "quantity": "10",
@@ -96,11 +96,11 @@
         "popular": "да"
     },
     {
-        "name": "Кровать TATRAN",
+        "name": "TATRAN кровать",
         "img": "./static/bed-tatran2.jpg",
         "price": "90 000",
         "description": "Основание из полированной нержавеющей стали, придает оригинальный парящий эффект",
-        "type": "кровати",
+        "type": "кровать",
         "purpose": "спальня",
         "color": "коричневый",
         "quantity": "2",
@@ -108,11 +108,11 @@
         "popular": "нет"
     },
     {
-        "name": "Диван NASTAN",
+        "name": "NASTAN диван",
         "img": "./static/sofa-nastan.jpg",
         "price": "79 000",
         "description": "Модель отличается простотой линий и форм, отсутствием броского декора",
-        "type": "диваны",
+        "type": "диван",
         "purpose": "гостиная",
         "color": "серый",
         "quantity": "2",
@@ -120,11 +120,11 @@
         "popular": "да"
     },
     {
-        "name": "Стол MENU",
+        "name": "MENU стол",
         "img": "./static/table-menu2.jpg",
         "price": "30 000",
         "description": "Для того чтобы трапезничать было приятно, необходим правильный обеденный стол",
-        "type": "столы",
+        "type": "стол",
         "purpose": "столовая",
         "color": "коричневый",
         "quantity": "7",
@@ -132,11 +132,11 @@
         "popular": "да"
     },
     {
-        "name": "Стол NORMAN",
+        "name": "NORMAN стол",
         "img": "./static/table-norman.jpg",
         "price": "40 000",
         "description": "Станет прекрасным дополнением для вашего интерьера",
-        "type": "столы",
+        "type": "стол",
         "purpose": "гостиная",
         "color": "белый",
         "quantity": "4",

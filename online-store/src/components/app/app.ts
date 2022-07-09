@@ -2,17 +2,22 @@
 // import AppController from '../controller/controller';
 // import { AppView } from '../view/appView';
 
-import requestFunction from './request-function';
+import requestFunction from './requestFunction';
 import TData from './types';
 
-type TApp = { currentCardsData: TData[] };
+type TApp = { currentCardsData: TData[]; initialData: TData[] };
 
-export const app: TApp = { currentCardsData: [] };
+export const app: TApp = { currentCardsData: [], initialData: [] };
 export const productContent = document.querySelectorAll<HTMLDivElement>('.product');
 
 class App {
     start() {
         document.addEventListener('DOMContentLoaded', () => {
+            const links = document.getElementsByTagName('a');
+            for (let i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', (e) => e.preventDefault());
+            }
+
             requestFunction();
         });
     }

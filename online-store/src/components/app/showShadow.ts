@@ -11,12 +11,6 @@ const showShadow = () => {
         productCard.addEventListener('mouseout', () => {
             currentShadow.style.opacity = '0';
         });
-
-        if (productCard.classList.contains('product__cart')) {
-            currentShadow.textContent = 'Удалить из корзины';
-        } else {
-            currentShadow.textContent = 'Добавить в корзину';
-        }
     });
 };
 

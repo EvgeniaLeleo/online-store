@@ -1,4 +1,4 @@
-import showData from './show-data';
+import showData from './showData';
 
 /***
  * Запрос данных из файла data.json и вывод их на текущую страницу в карточки

@@ -1,7 +1,9 @@
-import generateCardContent from './generate-card-content';
+import generateCardContent from './generateCardContent';
 import TData from './types';
 import { app } from './app';
-import showShadow from './show-shadow';
+import showShadow from './showShadow';
+import toggleCart from './toggleCart';
+import selectName from './selectName';
 
 /***
  * Добавление карточек на страницу
@@ -34,7 +36,7 @@ const showData = (data: TData[]) => {
         const productDetailsList = document.createElement('ul') as HTMLUListElement;
         productDetailsList.classList.add('product__details_list');
 
-        for (let j = 0; j < 7; j++) {
+        for (let j = 0; j < 6; j++) {
             const productDetail = document.createElement('li') as HTMLLIElement;
             productDetailsList.appendChild(productDetail);
         }
@@ -79,11 +81,11 @@ const showData = (data: TData[]) => {
         productDetailsNode[2].appendChild(productColor);
         productDetailsNode[3].textContent = 'Год выхода: ';
         productDetailsNode[3].appendChild(productDate);
-        productDetailsNode[4].textContent = 'Количество: ';
-        productDetailsNode[4].appendChild(productQuantity);
-        productDetailsNode[5].textContent = 'Популярное: ';
-        productDetailsNode[5].appendChild(productPopular);
-        productDetailsNode[6].appendChild(productDescription);
+        // productDetailsNode[4].textContent = 'Количество: ';
+        // productDetailsNode[4].appendChild(productQuantity);
+        productDetailsNode[4].textContent = 'Популярное: ';
+        productDetailsNode[4].appendChild(productPopular);
+        productDetailsNode[5].appendChild(productDescription);
 
         const shadow = document.createElement('div') as HTMLDivElement;
         shadow.classList.add('shadow');
@@ -99,11 +101,13 @@ const showData = (data: TData[]) => {
     // запись текущих данных в глобальный объект
     for (let i = 0; i < data.length; i++) {
         app.currentCardsData[i] = data[i];
+        app.initialData[i] = data[i];
     }
 
     showShadow();
+    toggleCart();
 
-    // arrowSlider(data); //добавляем функционал слайдеру
+    selectName();
 };
 
 export default showData;
