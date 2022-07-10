@@ -3,7 +3,6 @@ import TData from './types';
 import { app } from './app';
 import showShadow from './showShadow';
 import toggleCart from './toggleCart';
-import selectName from './selectName';
 
 /***
  * Добавление карточек на страницу
@@ -13,7 +12,6 @@ const showData = (data: TData[]) => {
     for (let i = 0; i < data.length; i++) {
         const productCard = document.createElement('div') as HTMLDivElement;
         productCard.classList.add('product');
-        // productCard.classList.add('product__cart');
 
         const productInfo = document.createElement('div') as HTMLDivElement;
         productInfo.classList.add('product__info');
@@ -101,13 +99,10 @@ const showData = (data: TData[]) => {
     // запись текущих данных в глобальный объект
     for (let i = 0; i < data.length; i++) {
         app.currentCardsData[i] = data[i];
-        app.initialData[i] = data[i];
     }
 
     showShadow();
     toggleCart();
-
-    selectName();
 };
 
 export default showData;

@@ -1,0 +1,15 @@
+.checkbox-type {
+    display: none;
+    transition: all 0.2s;
+
+    &__title {
+        margin-bottom: 15px;
+    }
+}
+
+#bed:checked ~ .button,
+#sofa:checked ~ .button,
+#armchair:checked ~ .button {
+    color: #fff;
+    background: #888;
+}
