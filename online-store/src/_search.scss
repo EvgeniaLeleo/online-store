@@ -1,6 +1,7 @@
-.checkbox-type {
+.checkbox-type,
+.checkbox-purpose {
     display: none;
-    transition: all 0.2s;
+    transition: $transit;
 
     &__title {
         margin-bottom: 15px;
@@ -9,7 +10,12 @@
 
 #bed:checked ~ .button,
 #sofa:checked ~ .button,
-#armchair:checked ~ .button {
+#armchair:checked ~ .button,
+#table:checked ~ .button,
+#wardrobe:checked ~ .button,
+#bedroom:checked ~ .button,
+#livingroom:checked ~ .button,
+#diningroom:checked ~ .button {
     color: #fff;
     background: #888;
 }

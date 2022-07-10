@@ -1,26 +1,41 @@
-// import { IData } from '../../types/types';
-// import AppController from '../controller/controller';
-// import { AppView } from '../view/appView';
-
+import { checkboxFilters } from './checkboxFilters';
+import purposeFilter from './purposeFilter';
 import requestFunction from './requestFunction';
-import TData from './types';
+import showData from './showData';
+import typeFilter from './typeFilter';
+import { disableLinks } from './utils';
 
-type TApp = { currentCardsData: TData[]; initialData: TData[] };
-
-export const app: TApp = { currentCardsData: [], initialData: [] };
 export const productContent = document.querySelectorAll<HTMLDivElement>('.product');
 
 class App {
     start() {
         document.addEventListener('DOMContentLoaded', () => {
-            const links = document.getElementsByTagName('a');
-            for (let i = 0; i < links.length; i++) {
-                links[i].addEventListener('click', (e) => e.preventDefault());
-            }
+            disableLinks();
 
-            requestFunction();
+            const resetStorageButton = document.querySelector('.resetLocalStorage') as HTMLButtonElement;
+            resetStorageButton.addEventListener('click', () => {
+                localStorage.setItem('typeFilter', '');
+                requestFunction();
+            });
+
+            const typeFilterData = localStorage.getItem('typeFilter');
+
+            if (typeFilterData) {
+                typeFilter();
+                purposeFilter();
+                checkboxFilters();
+
+                showData(JSON.parse(typeFilterData));
+            } else {
+                requestFunction();
+            }
         });
     }
+
+    // import { IData } from '../../types/types';
+    // import AppController from '../controller/controller';
+    // import { AppView } from '../view/appView';
+
     // controller: AppController;
     // view: AppView;
 

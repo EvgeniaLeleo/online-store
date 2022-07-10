@@ -69,7 +69,7 @@
         <div class="link-select-box center">
             <div><a class="link-catalog" href="#">Главная</a><span class="slash">/</span>Каталог товаров</div>
 
-            <input class="search-input" type="search" placeholder="Поиск" />
+            <input class="search-input" type="search" placeholder="Поиск" autofocus autocomplete="off" />
 
             <form class="sort" action="#">
                 <label for="item-select">Порядок:&nbsp;</label>
@@ -87,23 +87,91 @@
         <section class="center catalog">
             <div class="search-container">
                 <div class="label-container">
-                    <p class="checkbox-type__title">Вид мебели:</p>
+                    <div class="checkbox-type-container">
+                        <p class="checkbox-type__title">Вид мебели:</p>
 
-                    <label class="checkbox-label checkbox-label-01">
-                        <input class="checkbox-type" type="checkbox" name="type" id="bed" value="bed" />
-                        <span class="button button-1">Кровать</span>
-                    </label>
+                        <label class="checkbox-label checkbox-label-bed">
+                            <input class="checkbox checkbox-type" type="checkbox" name="type" id="bed" value="bed" />
+                            <span class="button">Кровать</span>
+                        </label>
 
-                    <label class="checkbox-label checkbox-label-02">
-                        <input class="checkbox-type" type="checkbox" name="type" id="sofa" value="sofa" />
-                        <span class="button button-2">Диван</span>
-                    </label>
+                        <label class="checkbox-label checkbox-label-sofa">
+                            <input class="checkbox checkbox-type" type="checkbox" name="type" id="sofa" value="sofa" />
+                            <span class="button">Диван</span>
+                        </label>
 
-                    <label class="checkbox-label checkbox-label-03">
-                        <input class="checkbox-type" type="checkbox" name="type" id="armchair" value="armchair" />
-                        <span class="button button-3">Кресло</span>
-                    </label>
+                        <label class="checkbox-label checkbox-label-armchair">
+                            <input
+                                class="checkbox checkbox-type"
+                                type="checkbox"
+                                name="type"
+                                id="armchair"
+                                value="armchair"
+                            />
+                            <span class="button">Кресло</span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-table">
+                            <input
+                                class="checkbox checkbox-type"
+                                type="checkbox"
+                                name="type"
+                                id="table"
+                                value="table"
+                            />
+                            <span class="button">Стол</span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-wardrobe">
+                            <input
+                                class="checkbox checkbox-type"
+                                type="checkbox"
+                                name="type"
+                                id="wardrobe"
+                                value="table"
+                            />
+                            <span class="button">Шкаф</span>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-purpose-container">
+                        <p class="checkbox-purpose__title">Назначение:</p>
+
+                        <label class="checkbox-label checkbox-label-bedroom">
+                            <input
+                                class="checkbox checkbox-purpose"
+                                type="checkbox"
+                                name="type"
+                                id="bedroom"
+                                value="bed"
+                            />
+                            <span class="button">Спальня</span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-livingroom">
+                            <input
+                                class="checkbox checkbox-purpose"
+                                type="checkbox"
+                                name="type"
+                                id="livingroom"
+                                value="bed"
+                            />
+                            <span class="button">Гостиная</span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-diningroom">
+                            <input
+                                class="checkbox checkbox-purpose"
+                                type="checkbox"
+                                name="type"
+                                id="diningroom"
+                                value="bed"
+                            />
+                            <span class="button">Столовая</span>
+                        </label>
+                    </div>
                 </div>
+                <button class="button resetLocalStorage">Сброс настроек</button>
             </div>
             <div class="product-content"></div>
         </section>

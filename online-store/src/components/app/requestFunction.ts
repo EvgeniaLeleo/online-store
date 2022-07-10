@@ -1,6 +1,7 @@
+import { checkboxFilters } from './checkboxFilters';
+import purposeFilter from './purposeFilter';
 import showData from './showData';
-import radio from './radio';
-import { app } from './app';
+import typeFilter from './typeFilter';
 
 /***
  * Запрос данных из файла data.json и вывод их на текущую страницу в карточки
@@ -19,12 +20,21 @@ const requestFunction = () => {
         } else {
             const data = JSON.parse(request.response);
 
+            localStorage.setItem('initialData', JSON.stringify(data));
+
+            typeFilter();
+            purposeFilter();
+            checkboxFilters();
+
             showData(data);
-            for (let i = 0; i < data.length; i++) {
-                app.currentCardsData[i] = data[i];
-                app.initialData[i] = data[i];
-            }
-            radio();
+
+            // const typeFilterData = localStorage.getItem('typeFilter');
+
+            // if (typeFilterData) {
+            //     showData(JSON.parse(typeFilterData));
+            // } else {
+            //     showData(data);
+            // }
         }
     };
 };

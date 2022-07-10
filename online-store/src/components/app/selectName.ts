@@ -1,4 +1,4 @@
-import { app } from './app';
+// import { app } from './app';
 
 const selectName = () => {
     const select = document.querySelector('.select') as HTMLSelectElement;

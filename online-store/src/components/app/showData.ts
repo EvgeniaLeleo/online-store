@@ -1,6 +1,5 @@
 import generateCardContent from './generateCardContent';
 import TData from './types';
-import { app } from './app';
 import showShadow from './showShadow';
 import toggleCart from './toggleCart';
 
@@ -9,6 +8,9 @@ import toggleCart from './toggleCart';
  */
 
 const showData = (data: TData[]) => {
+    const productContent = document.querySelector('.product-content') as HTMLDivElement;
+    productContent.innerHTML = '';
+
     for (let i = 0; i < data.length; i++) {
         const productCard = document.createElement('div') as HTMLDivElement;
         productCard.classList.add('product');
@@ -34,7 +36,7 @@ const showData = (data: TData[]) => {
         const productDetailsList = document.createElement('ul') as HTMLUListElement;
         productDetailsList.classList.add('product__details_list');
 
-        for (let j = 0; j < 6; j++) {
+        for (let j = 0; j < 5; j++) {
             const productDetail = document.createElement('li') as HTMLLIElement;
             productDetailsList.appendChild(productDetail);
         }
@@ -71,34 +73,28 @@ const showData = (data: TData[]) => {
         const productDetailsNode = productCard.getElementsByTagName('li');
 
         productDetails.appendChild(productDetailsList);
-        productDetailsNode[0].textContent = 'Тип: ';
-        productDetailsNode[0].appendChild(productType);
-        productDetailsNode[1].textContent = 'Назначение: ';
-        productDetailsNode[1].appendChild(productPurpose);
-        productDetailsNode[2].textContent = 'Цвет: ';
-        productDetailsNode[2].appendChild(productColor);
-        productDetailsNode[3].textContent = 'Год выхода: ';
-        productDetailsNode[3].appendChild(productDate);
+        // productDetailsNode[0].textContent = 'Тип: ';
+        // productDetailsNode[0].appendChild(productType);
+        productDetailsNode[0].textContent = 'Назначение: ';
+        productDetailsNode[0].appendChild(productPurpose);
+        productDetailsNode[1].textContent = 'Цвет: ';
+        productDetailsNode[1].appendChild(productColor);
+        productDetailsNode[2].textContent = 'Год выхода: ';
+        productDetailsNode[2].appendChild(productDate);
         // productDetailsNode[4].textContent = 'Количество: ';
         // productDetailsNode[4].appendChild(productQuantity);
-        productDetailsNode[4].textContent = 'Популярное: ';
-        productDetailsNode[4].appendChild(productPopular);
-        productDetailsNode[5].appendChild(productDescription);
+        productDetailsNode[3].textContent = 'Популярное: ';
+        productDetailsNode[3].appendChild(productPopular);
+        productDetailsNode[4].appendChild(productDescription);
 
         const shadow = document.createElement('div') as HTMLDivElement;
         shadow.classList.add('shadow');
         shadow.textContent = 'Добавить товар в корзину';
         productCard.appendChild(shadow);
 
-        const productContent = document.querySelector('.product-content') as HTMLDivElement;
         productContent.appendChild(productCard);
 
         generateCardContent(data, productCard, i);
-    }
-
-    // запись текущих данных в глобальный объект
-    for (let i = 0; i < data.length; i++) {
-        app.currentCardsData[i] = data[i];
     }
 
     showShadow();

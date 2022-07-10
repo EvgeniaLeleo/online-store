@@ -187,6 +187,11 @@ body {
     margin-bottom: 30px;
 }
 
+.label-container {
+    display: flex;
+    gap: 30px;
+}
+
 .product-box {
     padding-top: 72px;
 }
@@ -310,7 +315,7 @@ body {
     background-color: rgba(72, 72, 72, 0.7);
     backdrop-filter: blur(5px);
 
-    transition: all 0.2s;
+    transition: $transit;
 }
 
 .link-box {
@@ -458,7 +463,7 @@ body {
     border-radius: 20px;
 
     cursor: pointer;
-    transition: all 0.3s;
+    transition: $transit;
 
     &:hover {
         color: white;
