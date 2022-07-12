@@ -1,5 +1,5 @@
 import generateCardContent from './generateCardContent';
-import TData from './types';
+import { TData } from './types';
 import showShadow from './showShadow';
 import toggleCart from './toggleCart';
 
@@ -7,7 +7,7 @@ import toggleCart from './toggleCart';
  * Добавление карточек на страницу
  */
 
-const showData = (data: TData[]) => {
+const showCards = (data: TData[]) => {
     const productContent = document.querySelector('.product-content') as HTMLDivElement;
     productContent.innerHTML = '';
 
@@ -73,8 +73,6 @@ const showData = (data: TData[]) => {
         const productDetailsNode = productCard.getElementsByTagName('li');
 
         productDetails.appendChild(productDetailsList);
-        // productDetailsNode[0].textContent = 'Тип: ';
-        // productDetailsNode[0].appendChild(productType);
         productDetailsNode[0].textContent = 'Назначение: ';
         productDetailsNode[0].appendChild(productPurpose);
         productDetailsNode[1].textContent = 'Цвет: ';
@@ -101,4 +99,4 @@ const showData = (data: TData[]) => {
     toggleCart();
 };
 
-export default showData;
+export default showCards;

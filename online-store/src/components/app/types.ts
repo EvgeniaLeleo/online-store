@@ -1,4 +1,4 @@
-type TData = {
+export type TData = {
     name: string;
     img: string;
     price: string;
@@ -10,5 +10,3 @@ type TData = {
     date: string;
     popular: string;
 };
-
-export default TData;

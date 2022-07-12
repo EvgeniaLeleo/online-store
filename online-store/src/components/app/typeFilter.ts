@@ -1,15 +1,11 @@
-import { checkboxFilters } from './checkboxFilters';
-import showData from './showData';
-import TData from './types';
+import showCards from './showCards';
+import { commonCheckedItems } from './commonCheckedItems';
 
-const typeFilter = () => {
-    const initialDataString = localStorage.getItem('initialData');
-    if (!initialDataString) {
-        return;
-    }
-    const initialData: TData[] = JSON.parse(initialDataString);
+/**
+ * Добавляет в localStorage.typeFilter выбранные чекбоксами имена товаров
+ */
 
-    const productContent = document.querySelector('.product-content') as HTMLDivElement;
+const typeFilter: () => void = () => {
     const checkboxType = document.querySelectorAll<HTMLInputElement>('.checkbox-type');
 
     const checkboxBed = document.getElementById('bed') as HTMLInputElement;
@@ -19,46 +15,38 @@ const typeFilter = () => {
     const checkboxWardrobe = document.getElementById('wardrobe') as HTMLInputElement;
 
     checkboxType.forEach((checkbox) => {
-        const tempArray: TData[] = [];
-        let bedData: TData[] = [];
-        let sofaData: TData[] = [];
-        let armchairData: TData[] = [];
-        let tableData: TData[] = [];
-        let wardrobeData: TData[] = [];
-
         checkbox.addEventListener('change', () => {
+            const newTypeFilter = [];
+
             if (checkboxBed.checked) {
-                productContent.innerHTML = '';
-                bedData = initialData.filter((item) => item.type === 'кровать');
-            } else bedData = [];
+                newTypeFilter.push('кровать');
+            }
 
             if (checkboxSofa.checked) {
-                productContent.innerHTML = '';
-                sofaData = initialData.filter((item) => item.type === 'диван');
-            } else sofaData = [];
+                newTypeFilter.push('диван');
+            }
 
             if (checkboxArmchair.checked) {
-                productContent.innerHTML = '';
-                armchairData = initialData.filter((item) => item.type === 'кресло');
-            } else armchairData = [];
+                newTypeFilter.push('кресло');
+            }
 
             if (checkboxTable.checked) {
-                productContent.innerHTML = '';
-                tableData = initialData.filter((item) => item.type === 'стол');
-            } else tableData = [];
+                newTypeFilter.push('стол');
+            }
 
             if (checkboxWardrobe.checked) {
-                productContent.innerHTML = '';
-                wardrobeData = initialData.filter((item) => item.type === 'шкаф');
-            } else wardrobeData = [];
+                newTypeFilter.push('шкаф');
+            }
 
-            const checkedItems = tempArray.concat(bedData, sofaData, armchairData, tableData, wardrobeData);
+            localStorage.setItem('typeFilter', JSON.stringify(newTypeFilter));
 
-            localStorage.setItem('typeFilter', JSON.stringify(checkedItems));
+            const initialData = localStorage.getItem('initialData');
 
-            if (checkedItems.length) {
-                showData(checkedItems);
-            } else checkboxFilters();
+            if (initialData) {
+                showCards(commonCheckedItems(JSON.parse(initialData)));
+            }
+
+            // showCardsIfCheckboxNotChecked();
         });
     });
 };

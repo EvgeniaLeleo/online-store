@@ -1,16 +1,12 @@
-import { checkboxFilters } from './checkboxFilters';
-import showData from './showData';
-import TData from './types';
+import showCards from './showCards';
+import { commonCheckedItems } from './commonCheckedItems';
+import { showCardsIfCheckboxNotChecked } from './showCardsIfCheckboxNotChecked';
 
-const purposeFilter = () => {
-    const initialDataString = localStorage.getItem('initialData');
-    if (!initialDataString) {
-        return;
-    }
+/**
+ * Добавляет в localStorage.typeFilter выбранные чекбоксы
+ */
 
-    const initialData: TData[] = JSON.parse(initialDataString);
-
-    const productContent = document.querySelector('.product-content') as HTMLDivElement;
+const purposeFilter: () => void = () => {
     const checkboxPurpose = document.querySelectorAll<HTMLInputElement>('.checkbox-purpose');
 
     const checkboxBedroom = document.getElementById('bedroom') as HTMLInputElement;
@@ -18,34 +14,30 @@ const purposeFilter = () => {
     const checkboxDinigroom = document.getElementById('diningroom') as HTMLInputElement;
 
     checkboxPurpose.forEach((checkbox) => {
-        const tempArray: TData[] = [];
-        let bedroomData: TData[] = [];
-        let livingroomData: TData[] = [];
-        let diningroomData: TData[] = [];
-
         checkbox.addEventListener('change', () => {
+            const newPurposeFilter = [];
+
             if (checkboxBedroom.checked) {
-                productContent.innerHTML = '';
-                bedroomData = initialData.filter((item) => item.purpose === 'спальня');
-            } else bedroomData = [];
+                newPurposeFilter.push('спальня');
+            }
 
             if (checkboxLivingroom.checked) {
-                productContent.innerHTML = '';
-                livingroomData = initialData.filter((item) => item.purpose === 'гостиная');
-            } else livingroomData = [];
+                newPurposeFilter.push('гостиная');
+            }
 
             if (checkboxDinigroom.checked) {
-                productContent.innerHTML = '';
-                diningroomData = initialData.filter((item) => item.purpose === 'столовая');
-            } else diningroomData = [];
+                newPurposeFilter.push('столовая');
+            }
 
-            const checkedItems = tempArray.concat(bedroomData, livingroomData, diningroomData);
+            localStorage.setItem('purposeFilter', JSON.stringify(newPurposeFilter));
 
-            localStorage.setItem('purposeFilter', JSON.stringify(checkedItems));
+            const initialData = localStorage.getItem('initialData');
 
-            if (checkedItems.length) {
-                showData(checkedItems);
-            } else checkboxFilters();
+            if (initialData) {
+                showCards(commonCheckedItems(JSON.parse(initialData)));
+            }
+
+            // showCardsIfCheckboxNotChecked();
         });
     });
 };
