@@ -1,5 +1,5 @@
 /**
- * Вывод в консоль информации о фильтрах-чекбоксах и содержимое корзины
+ * Вывод в консоль информации о фильтрах-чекбоксах и содержимого корзины
  */
 
 export const consoleFilters: () => void = () => {
@@ -32,6 +32,6 @@ export const consoleFilters: () => void = () => {
             purposeLen > 2 ? localStorage.getItem('purposeFilter') : 'не выбрано'
         },\nцвет: ${colorLen > 2 ? localStorage.getItem('colorFilter') : 'не выбран'}\nпопулярное: ${
             localStorage.getItem('popularFilter') ? 'да' : 'не выбрано'
-        },\nКорзина: ${cartLen > 2 ? localStorage.getItem('cartItems') : 'пуста'}`
+        }\n\nКорзина: ${cartLen > 2 ? localStorage.getItem('cartItems') : 'пуста'}`
     );
 };
