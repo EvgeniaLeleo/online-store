@@ -1,5 +1,6 @@
 import showCards from '../showCards';
 import { commonCheckedItems } from '../commonCheckedItems';
+import { consoleFilters } from '../utils/consoleFilters';
 
 /**
  * Добавляет в localStorage.colorFilter выбранные чекбоксы
@@ -50,6 +51,8 @@ const colorFilter: () => void = () => {
             if (initialData) {
                 showCards(commonCheckedItems(JSON.parse(initialData)));
             }
+
+            consoleFilters();
         });
     });
 };

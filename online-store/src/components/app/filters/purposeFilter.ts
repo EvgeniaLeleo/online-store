@@ -1,5 +1,6 @@
 import showCards from '../showCards';
 import { commonCheckedItems } from '../commonCheckedItems';
+import { consoleFilters } from '../utils/consoleFilters';
 
 /**
  * Добавляет в localStorage.purposeFilter выбранные чекбоксы
@@ -36,7 +37,7 @@ const purposeFilter: () => void = () => {
                 showCards(commonCheckedItems(JSON.parse(initialData)));
             }
 
-            // showCardsIfCheckboxNotChecked();
+            consoleFilters();
         });
     });
 };

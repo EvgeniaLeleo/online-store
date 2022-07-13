@@ -1,5 +1,6 @@
 import showCards from '../showCards';
 import { commonCheckedItems } from '../commonCheckedItems';
+import { consoleFilters } from '../utils/consoleFilters';
 
 /**
  * Добавляет в localStorage.typeFilter выбранные чекбоксами имена товаров
@@ -46,7 +47,7 @@ const typeFilter: () => void = () => {
                 showCards(commonCheckedItems(JSON.parse(initialData)));
             }
 
-            // showCardsIfCheckboxNotChecked();
+            consoleFilters();
         });
     });
 };

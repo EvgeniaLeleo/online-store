@@ -1,5 +1,6 @@
 import showCards from '../showCards';
 import { commonCheckedItems } from '../commonCheckedItems';
+import { consoleFilters } from '../utils/consoleFilters';
 
 /**
  * Добавляет в localStorage.popularFilter отмеченный чекбоксы
@@ -26,6 +27,8 @@ const popularFilter: () => void = () => {
         if (initialData) {
             showCards(commonCheckedItems(JSON.parse(initialData)));
         }
+
+        consoleFilters();
     });
 };
 

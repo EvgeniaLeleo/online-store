@@ -1,6 +1,5 @@
 import { TData } from './types';
 import { commonItems } from './utils/commonItems';
-import { consoleFilters } from './utils/consoleFilters';
 
 /**
  * Формирует массив данных для отрисовки, пересекая исходные данные по фильтрам type, purpose, color, popular
@@ -30,8 +29,6 @@ export const commonCheckedItems: (data: TData[]) => TData[] = (data: TData[]) =>
     if (popularFilterArray(data).length !== 0) {
         tempArray = commonItems(tempArray, popularFilterArray(data));
     }
-
-    consoleFilters();
 
     return tempArray;
 };
