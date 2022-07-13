@@ -2,12 +2,12 @@
  * Добавление функциональности кнопки сброса Local Storage
  */
 
-import requestFunction from './requestFunction';
+import { requestFunction } from './requestFunction';
 import { resetLocalStorage } from './resetLocalStorage';
 import { showCartItemsQuantity } from './showCartItemsQuantity';
 import { consoleFilters } from './utils/consoleFilters';
 
-export const addResetStorageButtonFunctionality = () => {
+export const addResetStorageButtonFunctionality: () => void = () => {
     const ResetLocalStorageButton = document.querySelector('.resetLocalStorage') as HTMLButtonElement;
     ResetLocalStorageButton.addEventListener('click', () => {
         resetLocalStorage();

@@ -1,11 +1,11 @@
 /**
- * Добавляет продукт в корзину при клике на карточку
+ * Добавляет/удаляет продукт из корзины при клике на карточку
  */
 
 import { consoleFilters } from '../utils/consoleFilters';
 import { changeCartQuantityIcon } from './changeCartQuantityIcon';
 
-export const addItemToCart = (productCard: HTMLDivElement) => {
+export const addOrRemoveItemFromCart: (productCard: HTMLDivElement) => void = (productCard) => {
     productCard.addEventListener('click', () => {
         const currentCartItems = localStorage.getItem('cartItems') as string;
         const currentCartItemsArray: string[] = JSON.parse(currentCartItems);
@@ -23,7 +23,7 @@ export const addItemToCart = (productCard: HTMLDivElement) => {
             productCard.classList.remove('product__cart');
             currentShadow.textContent = 'Добавить в корзину';
         } else {
-            alert('Корзина не резиновая');
+            alert('Извините, все слоты заполнены');
         }
 
         localStorage.setItem('cartItems', JSON.stringify(currentCartItemsArray));

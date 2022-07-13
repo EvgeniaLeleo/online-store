@@ -2,7 +2,7 @@
  * Вывод в консоль информации о фильтрах-чекбоксах и содержимое корзины
  */
 
-export const consoleFilters = () => {
+export const consoleFilters: () => void = () => {
     const typeFilter = localStorage.getItem('typeFilter');
     let typeLen = 0;
     if (typeFilter) {

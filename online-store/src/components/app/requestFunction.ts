@@ -8,7 +8,7 @@ import popularFilter from './filters/popularFilter';
  * Запрос данных из файла data.json и вывод их на текущую страницу в карточки
  */
 
-const requestFunction = () => {
+export const requestFunction: () => void = () => {
     const request = new XMLHttpRequest();
 
     request.open('GET', './static/data.json');
@@ -32,5 +32,3 @@ const requestFunction = () => {
         }
     };
 };
-
-export default requestFunction;

@@ -2,10 +2,10 @@
  * Формирует массив данных для отрисовки, пересекая исходные данные по фильтрам type, purpose, color, popular
  */
 
-import { TData } from './types';
-import { commonItems } from './utils/commonItems';
+import { TData } from '../types';
+import { commonItems } from '../utils/commonItems';
 
-export const commonCheckedItems: (data: TData[]) => TData[] = (data: TData[]) => {
+export const commonCheckedItems: (data: TData[]) => TData[] = (data) => {
     let tempArray: TData[] = [];
 
     const initialData = localStorage.getItem('initialData');
@@ -37,7 +37,7 @@ export const commonCheckedItems: (data: TData[]) => TData[] = (data: TData[]) =>
  * Формирует массив данных для отображения, фильтруя исходные данные по фильтру type
  */
 
-const typeFilterArray = (data: TData[]) => {
+const typeFilterArray: (data: TData[]) => TData[] = (data) => {
     const typeFilteredData: TData[] = [];
 
     JSON.parse(localStorage.typeFilter).forEach((type: string) =>
@@ -48,8 +48,6 @@ const typeFilterArray = (data: TData[]) => {
         })
     );
 
-    // console.log(typeFilteredData);
-
     return typeFilteredData;
 };
 
@@ -57,7 +55,7 @@ const typeFilterArray = (data: TData[]) => {
  * Формирует массив данных для отображения, фильтруя исходные данные по фильтру purpose
  */
 
-const purposeFilterArray = (data: TData[]) => {
+const purposeFilterArray: (data: TData[]) => TData[] = (data) => {
     const purposeFilteredData: TData[] = [];
 
     JSON.parse(localStorage.purposeFilter).forEach((purpose: string) =>
@@ -75,7 +73,7 @@ const purposeFilterArray = (data: TData[]) => {
  * Формирует массив данных для отображения, фильтруя исходные данные по фильтру color
  */
 
-const colorFilterArray = (data: TData[]) => {
+const colorFilterArray: (data: TData[]) => TData[] = (data) => {
     const colorFilteredData: TData[] = [];
 
     JSON.parse(localStorage.colorFilter).forEach((color: string) =>
@@ -93,7 +91,7 @@ const colorFilterArray = (data: TData[]) => {
  * Формирует массив данных для отображения, фильтруя исходные данные по фильтру popular
  */
 
-const popularFilterArray = (data: TData[]) => {
+const popularFilterArray: (data: TData[]) => TData[] = (data) => {
     const popularFilteredData: TData[] = [];
 
     data.forEach((item) => {

@@ -2,12 +2,12 @@
  * Чекбоксы из localstorage отмечаются заново
  */
 
-export const checkCheckboxesFromLocalStorage = (
+export const checkCheckboxesFromLocalStorage: (
     typeFilterArray: string[],
     purposeFilterArray: string[],
     colorFilterArray: string[],
     popularFilterData: string | null
-) => {
+) => void = (typeFilterArray, purposeFilterArray, colorFilterArray, popularFilterData) => {
     const filterCheckboxes = document.querySelectorAll<HTMLInputElement>('.checkbox');
 
     filterCheckboxes.forEach((checkbox) => {

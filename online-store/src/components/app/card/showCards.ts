@@ -6,9 +6,9 @@ import generateCardContent from './generateCardContent';
 import { TData } from '../types';
 import { displayAddRemoveFromCart } from './displayAddRemoveFromCart';
 import { showCardsOfProductsInCart } from './showCardsOfProductsInCart';
-import { addItemToCart } from './addItemToCart';
+import { addOrRemoveItemFromCart } from './addOrRemoveItemFromCart';
 
-export const showCards = (data: TData[]) => {
+export const showCards: (data: TData[]) => void = (data) => {
     const productContent = document.querySelector('.product-content') as HTMLDivElement;
     productContent.innerHTML = '';
 
@@ -109,7 +109,7 @@ export const showCards = (data: TData[]) => {
 
         generateCardContent(data, productCard, i);
 
-        addItemToCart(productCard);
+        addOrRemoveItemFromCart(productCard);
         displayAddRemoveFromCart(productCard);
     }
 

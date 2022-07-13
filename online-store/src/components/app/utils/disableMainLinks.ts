@@ -1,7 +1,7 @@
 /**
  * Блокирует все ссылки на странице, кроме copyright и RS Logo
  */
-export const disableMainLinks = () => {
+export const disableMainLinks: () => void = () => {
     const top = document.querySelector('.top_catalog') as HTMLDivElement;
     const filters = document.querySelector('.filters') as HTMLDivElement;
     const footerMainInformation = document.querySelector('.footer__main-information') as HTMLDivElement;
@@ -26,7 +26,7 @@ export const disableMainLinks = () => {
 /**
  * Блокирует все ссылки на странице
  */
-export const disableLinks = () => {
+export const disableLinks: () => void = () => {
     const links = document.getElementsByTagName('a');
 
     for (let i = 0; i < links.length; i++) {

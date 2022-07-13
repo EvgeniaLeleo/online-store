@@ -2,7 +2,7 @@
  * Отмечает карточки товаров, находящихся в корзине
  */
 
-export const showCardsOfProductsInCart = () => {
+export const showCardsOfProductsInCart: () => void = () => {
     const productCards = document.querySelectorAll<HTMLDivElement>('.product');
     const currentCartItems = localStorage.getItem('cartItems') as string;
     const currentCartItemsArray = JSON.parse(currentCartItems);

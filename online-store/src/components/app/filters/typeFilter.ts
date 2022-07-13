@@ -1,5 +1,5 @@
 import { showCards } from '../card/showCards';
-import { commonCheckedItems } from '../commonCheckedItems';
+import { commonCheckedItems } from './commonCheckedItems';
 import { consoleFilters } from '../utils/consoleFilters';
 
 /**

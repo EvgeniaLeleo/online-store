@@ -5,7 +5,7 @@
 import { showCards } from './card/showCards';
 import { consoleFilters } from './utils/consoleFilters';
 
-export const addResetFiltersButtonFunctionality = () => {
+export const addResetFiltersButtonFunctionality: () => void = () => {
     const ResetFiltersButton = document.querySelector('.resetFilters') as HTMLButtonElement;
 
     ResetFiltersButton.addEventListener('click', () => {

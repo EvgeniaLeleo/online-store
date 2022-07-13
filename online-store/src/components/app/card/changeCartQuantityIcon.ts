@@ -2,7 +2,7 @@
  * Иконка, показывающая количество товаров в корзине
  */
 
-export const changeCartQuantityIcon = (cartItems: string[]) => {
+export const changeCartQuantityIcon: (cartItems: string[]) => void = (cartItems) => {
     const cartItemsQuantity = document.querySelectorAll<HTMLSpanElement>('.cart-items-quantity');
 
     cartItemsQuantity.forEach((icon) => {

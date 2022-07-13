@@ -2,7 +2,7 @@
  * Вывод количества товаров в корзине
  */
 
-export const showCartItemsQuantity = () => {
+export const showCartItemsQuantity: () => void = () => {
     const cartItemsQuantity = document.querySelectorAll<HTMLSpanElement>('.cart-items-quantity');
     const currentCartItems = localStorage.getItem('cartItems') as string;
     const currentCartItemsArray = JSON.parse(currentCartItems);

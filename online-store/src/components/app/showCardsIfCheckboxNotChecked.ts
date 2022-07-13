@@ -5,7 +5,7 @@ import { TData } from './types';
  * Проверка чекбоксов на checked и вывод начальных данных в случае false
  */
 
-export const showCardsIfCheckboxNotChecked = () => {
+export const showCardsIfCheckboxNotChecked: () => void = () => {
     const initialDataString = localStorage.getItem('initialData');
 
     if (!initialDataString) {
