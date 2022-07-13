@@ -21,8 +21,6 @@ const popularFilter: () => void = () => {
 
         localStorage.setItem('popularFilter', newPopularFilter);
 
-        console.log('local', localStorage.getItem('popularFilter'));
-
         const initialData = localStorage.getItem('initialData');
 
         if (initialData) {

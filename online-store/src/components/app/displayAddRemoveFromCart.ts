@@ -1,4 +1,8 @@
-const showShadow = () => {
+/**
+ * Добавление/удаление метки "В корзине" при клике по карточке и появление overlay при наведении курсора на карточку товара
+ */
+
+const displayAddRemoveFromCart = () => {
     const productCards = document.querySelectorAll<HTMLDivElement>('.product');
 
     productCards.forEach((productCard) => {
@@ -14,4 +18,4 @@ const showShadow = () => {
     });
 };
 
-export default showShadow;
+export default displayAddRemoveFromCart;

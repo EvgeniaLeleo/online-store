@@ -1,10 +1,10 @@
 import generateCardContent from './generateCardContent';
 import { TData } from './types';
-import showShadow from './showShadow';
+import displayAddRemoveFromCart from './displayAddRemoveFromCart';
 import toggleCart from './toggleCart';
 
 /***
- * Добавление карточек на страницу
+ * Добавление карточек на страницу (структура и наполнение)
  */
 
 const showCards = (data: TData[]) => {
@@ -12,7 +12,7 @@ const showCards = (data: TData[]) => {
     productContent.innerHTML = '';
 
     if (data.length === 0) {
-        productContent.innerHTML = '<span class="no-items-text">Извините, по Вашему запросу товаров не найдено</span>';
+        productContent.innerHTML = '<span class="no-items-text">Извините, по Вашему запросу ничего не найдено</span>';
         return;
     }
 
@@ -114,7 +114,7 @@ const showCards = (data: TData[]) => {
         generateCardContent(data, productCard, i);
     }
 
-    showShadow();
+    displayAddRemoveFromCart();
     toggleCart();
 };
 

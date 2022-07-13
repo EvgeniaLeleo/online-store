@@ -4,11 +4,12 @@ import showCards from './showCards';
 import { showCardsIfCheckboxNotChecked } from './showCardsIfCheckboxNotChecked';
 import { commonCheckedItems } from './commonCheckedItems';
 import typeFilter from './filters/typeFilter';
-import { disableFooterForm, disableMainLinks } from './utils';
+import { disableMainLinks } from './utils/disableMainLinks';
 import purposeFilter from './filters/purposeFilter';
 import colorFilter from './filters/colorFilter';
 import { checkCheckboxesFromLocalStorage } from './checkCheckboxesFromLocalStorage';
 import popularFilter from './filters/popularFilter';
+import { disableFooterForm } from './utils/disableFooterForm';
 
 export const productContent = document.querySelectorAll<HTMLDivElement>('.product');
 
