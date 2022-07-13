@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <div class="link-select-box center">
+        <div class="filters center">
             <div><a class="link-catalog" href="#">Главная</a><span class="slash">/</span>Каталог товаров</div>
 
             <input class="search-input" type="search" placeholder="Поиск" autofocus autocomplete="off" />
@@ -84,91 +84,195 @@
             </form>
         </div>
 
-        <section class="center catalog">
+        <section class="catalog center">
             <div class="search-container">
-                <div class="label-container">
+                <div class="checkbox-container">
                     <div class="checkbox-type-container">
                         <p class="checkbox-type__title">Вид мебели:</p>
 
-                        <label class="checkbox-label checkbox-label-bed">
-                            <input
-                                class="checkbox checkbox-type"
-                                type="checkbox"
-                                name="type"
-                                id="bed"
-                                value="кровать"
-                            />
-                            <span class="button">Кровать</span>
-                        </label>
+                        <div class="label-container label-container-type">
+                            <label class="checkbox-label checkbox-label-bed">
+                                <input
+                                    class="checkbox checkbox-type"
+                                    type="checkbox"
+                                    name="type"
+                                    id="bed"
+                                    value="кровать"
+                                />
+                                <span class="button">Кровать</span>
+                            </label>
 
-                        <label class="checkbox-label checkbox-label-sofa">
-                            <input class="checkbox checkbox-type" type="checkbox" name="type" id="sofa" value="диван" />
-                            <span class="button">Диван</span>
-                        </label>
+                            <label class="checkbox-label checkbox-label-sofa">
+                                <input
+                                    class="checkbox checkbox-type"
+                                    type="checkbox"
+                                    name="type"
+                                    id="sofa"
+                                    value="диван"
+                                />
+                                <span class="button">Диван</span>
+                            </label>
 
-                        <label class="checkbox-label checkbox-label-armchair">
-                            <input
-                                class="checkbox checkbox-type"
-                                type="checkbox"
-                                name="type"
-                                id="armchair"
-                                value="кресло"
-                            />
-                            <span class="button">Кресло</span>
-                        </label>
+                            <label class="checkbox-label checkbox-label-armchair">
+                                <input
+                                    class="checkbox checkbox-type"
+                                    type="checkbox"
+                                    name="type"
+                                    id="armchair"
+                                    value="кресло"
+                                />
+                                <span class="button">Кресло</span>
+                            </label>
 
-                        <label class="checkbox-label checkbox-label-table">
-                            <input class="checkbox checkbox-type" type="checkbox" name="type" id="table" value="стол" />
-                            <span class="button">Стол</span>
-                        </label>
+                            <label class="checkbox-label checkbox-label-table">
+                                <input
+                                    class="checkbox checkbox-type"
+                                    type="checkbox"
+                                    name="type"
+                                    id="table"
+                                    value="стол"
+                                />
+                                <span class="button">Стол</span>
+                            </label>
 
-                        <label class="checkbox-label checkbox-label-wardrobe">
-                            <input
-                                class="checkbox checkbox-type"
-                                type="checkbox"
-                                name="type"
-                                id="wardrobe"
-                                value="шкаф"
-                            />
-                            <span class="button">Шкаф</span>
-                        </label>
+                            <label class="checkbox-label checkbox-label-wardrobe">
+                                <input
+                                    class="checkbox checkbox-type"
+                                    type="checkbox"
+                                    name="type"
+                                    id="wardrobe"
+                                    value="шкаф"
+                                />
+                                <span class="button">Шкаф</span>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="checkbox-purpose-container">
                         <p class="checkbox-purpose__title">Назначение:</p>
 
-                        <label class="checkbox-label checkbox-label-bedroom">
-                            <input
-                                class="checkbox checkbox-purpose"
-                                type="checkbox"
-                                name="type"
-                                id="bedroom"
-                                value="спальня"
-                            />
-                            <span class="button">Спальня</span>
-                        </label>
+                        <div class="label-container label-container-purose">
+                            <label class="checkbox-label checkbox-label-bedroom">
+                                <input
+                                    class="checkbox checkbox-purpose"
+                                    type="checkbox"
+                                    name="type"
+                                    id="bedroom"
+                                    value="спальня"
+                                />
+                                <span class="button">Спальня</span>
+                            </label>
 
-                        <label class="checkbox-label checkbox-label-livingroom">
-                            <input
-                                class="checkbox checkbox-purpose"
-                                type="checkbox"
-                                name="type"
-                                id="livingroom"
-                                value="гостиная"
-                            />
-                            <span class="button">Гостиная</span>
-                        </label>
+                            <label class="checkbox-label checkbox-label-livingroom">
+                                <input
+                                    class="checkbox checkbox-purpose"
+                                    type="checkbox"
+                                    name="type"
+                                    id="livingroom"
+                                    value="гостиная"
+                                />
+                                <span class="button">Гостиная</span>
+                            </label>
 
-                        <label class="checkbox-label checkbox-label-diningroom">
-                            <input
-                                class="checkbox checkbox-purpose"
-                                type="checkbox"
-                                name="type"
-                                id="diningroom"
-                                value="столовая"
-                            />
-                            <span class="button">Столовая</span>
-                        </label>
+                            <label class="checkbox-label checkbox-label-diningroom">
+                                <input
+                                    class="checkbox checkbox-purpose"
+                                    type="checkbox"
+                                    name="type"
+                                    id="diningroom"
+                                    value="столовая"
+                                />
+                                <span class="button">Столовая</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-color-container">
+                        <p class="checkbox-color__title">Цвет:</p>
+
+                        <div class="label-container label-container-color">
+                            <label class="checkbox-label checkbox-label-white">
+                                <input
+                                    class="checkbox checkbox-color"
+                                    type="checkbox"
+                                    name="color"
+                                    id="white"
+                                    value="белый"
+                                />
+                                <span class="button-color button-white"></span>
+                            </label>
+
+                            <label class="checkbox-label checkbox-label-yellow">
+                                <input
+                                    class="checkbox checkbox-color"
+                                    type="checkbox"
+                                    name="color"
+                                    id="yellow"
+                                    value="желтый"
+                                />
+                                <span class="button-color button-yellow"></span>
+                            </label>
+
+                            <label class="checkbox-label checkbox-label-brown">
+                                <input
+                                    class="checkbox checkbox-color"
+                                    type="checkbox"
+                                    name="color"
+                                    id="brown"
+                                    value="коричневый"
+                                />
+                                <span class="button-color button-brown"></span>
+                            </label>
+
+                            <label class="checkbox-label checkbox-label-black">
+                                <input
+                                    class="checkbox checkbox-color"
+                                    type="checkbox"
+                                    name="color"
+                                    id="black"
+                                    value="черный"
+                                />
+                                <span class="button-color button-black"></span>
+                            </label>
+
+                            <label class="checkbox-label checkbox-label-blue">
+                                <input
+                                    class="checkbox checkbox-color"
+                                    type="checkbox"
+                                    name="color"
+                                    id="blue"
+                                    value="синий"
+                                />
+                                <span class="button-color button-blue"></span>
+                            </label>
+
+                            <label class="checkbox-label checkbox-label-grey">
+                                <input
+                                    class="checkbox checkbox-color"
+                                    type="checkbox"
+                                    name="color"
+                                    id="grey"
+                                    value="серый"
+                                />
+                                <span class="button-color button-grey"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-popular-container">
+                        <div class="label-container label-container-popular">
+                            <p class="checkbox-popular__title">Только популярные:</p>
+                            <label class="checkbox-label checkbox-label-popular">
+                                <input
+                                    class="checkbox checkbox-popular"
+                                    type="checkbox"
+                                    name="popular"
+                                    id="popular"
+                                    value=""
+                                />
+                                <span class="button-popular"> </span>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <button class="button resetLocalStorage">Сброс фильтров</button>
@@ -177,40 +281,53 @@
         </section>
 
         <footer class="footer center">
-            <a class="footer__logo" href="index.html">
-                <img src="static/logo-black.svg" alt="Логотип" />
-            </a>
-            <div class="footer__content">
-                <div class="footer__info">
-                    <div class="footer__nav_item">
-                        <h4 class="footer__title">Меню</h4>
-                        <a class="footer__link" href="">Главная</a>
-                        <a class="footer__link" href="">Каталог</a>
-                        <a class="footer__link" href="">Корзина</a>
-                    </div>
-                    <div class="footer__nav_item">
-                        <h4 class="footer__title">Контакты</h4>
-                        <a class="footer__link" href="tel:+79088008080">+7 908 800 80 80</a>
-                        <a class="footer__link" href="mailto:help@interier.com">help@interier.com</a>
+            <div class="footer__main-information">
+                <a class="footer__logo" href="index.html">
+                    <img src="static/logo-black.svg" alt="Логотип" />
+                </a>
+                <div class="footer__content">
+                    <div class="footer__info">
+                        <div class="footer__nav_item">
+                            <h4 class="footer__title">Меню</h4>
+                            <a class="footer__link" href="">Главная</a>
+                            <a class="footer__link" href="">Каталог</a>
+                            <a class="footer__link" href="">Корзина</a>
+                        </div>
+                        <div class="footer__nav_item">
+                            <h4 class="footer__title">Контакты</h4>
+                            <a class="footer__link" href="tel:+79088008080">+7 908 800 80 80</a>
+                            <a class="footer__link" href="mailto:help@interier.com">help@interier.com</a>
 
-                        <div class="footer__icons">
-                            <a href="#">
-                                <img class="footer__icon" src="static/inst.svg" alt="Instagram" />
-                            </a>
-                            <a href="#">
-                                <img class="footer__icon" src="static/twitter.svg" alt="Twitter" />
-                            </a>
-                            <a href="#">
-                                <img class="footer__icon" src="static/facebook.svg" alt="Facebook" />
-                            </a>
+                            <div class="footer__icons">
+                                <a href="#">
+                                    <img class="footer__icon" src="static/inst.svg" alt="Instagram" />
+                                </a>
+                                <a href="#">
+                                    <img class="footer__icon" src="static/twitter.svg" alt="Twitter" />
+                                </a>
+                                <a href="#">
+                                    <img class="footer__icon" src="static/facebook.svg" alt="Facebook" />
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    <form action="" class="footer__form" method="post">
+                        <p class="footer__text">Получайте наши новости и обновления</p>
+                        <input class="footer__input" type="email" placeholder="Email Address" />
+                        <button class="button">Подписаться</button>
+                    </form>
                 </div>
-                <form class="footer__form" action="#">
-                    <p class="footer__text">Получайте наши новости и обновления</p>
-                    <input class="footer__input" type="email" placeholder="Email Address" />
-                    <button class="button">Подписаться</button>
-                </form>
+            </div>
+
+            <div class="footer__copyright-and-logo">
+                <p class="copyright">
+                    2022 Copyright
+                    <a class="copyright__link" href="https://github.com/EvgeniaLeleo" target="_blank">EvgeniaLeleo</a>
+                </p>
+
+                <a class="footer__logoRS" href="https://rs.school/js/" target="_blank">
+                    <img class="footer__logoRS-img" src="./static/rs_school_js.svg" alt="RS school logo" />
+                </a>
             </div>
         </footer>
     </body>

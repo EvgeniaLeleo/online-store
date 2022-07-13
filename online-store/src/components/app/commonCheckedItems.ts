@@ -2,10 +2,10 @@ import { TData } from './types';
 import { commonItems } from './utils';
 
 /**
- * Формирует массив данных для отображения, пересекая исходные данные по фильтрам type, purpose, color, popular
+ * Формирует массив данных для отрисовки, пересекая исходные данные по фильтрам type, purpose, color, popular
  */
 
- export const commonCheckedItems: (data: TData[]) => TData[] = (data: TData[]) => {
+export const commonCheckedItems: (data: TData[]) => TData[] = (data: TData[]) => {
     let tempArray: TData[] = [];
 
     const initialData = localStorage.getItem('initialData');
@@ -32,7 +32,6 @@ import { commonItems } from './utils';
 
     return tempArray;
 };
-
 
 /**
  * Формирует массив данных для отображения, фильтруя исходные данные по фильтру type
@@ -105,4 +104,3 @@ const popularFilterArray = (data: TData[]) => {
 
     return popularFilteredData;
 };
-

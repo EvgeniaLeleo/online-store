@@ -1,7 +1,14 @@
+.label-container {
+    display: flex;
+    gap: 5px;
+}
+
 .checkbox-type,
-.checkbox-purpose {
+.checkbox-purpose,
+.checkbox-color,
+.checkbox-popular {
     display: none;
-    transition: $transit;
+    transition: $transit-fast;
 
     &__title {
         margin-bottom: 15px;
@@ -18,4 +25,94 @@
 #diningroom:checked ~ .button {
     color: #fff;
     background: #888;
+}
+
+.button-color,
+.button-popular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid #000000;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: $transit;
+
+    &:hover {
+        filter: brightness(50%);
+    }
+}
+
+#white:checked ~ .button-color::after,
+#yellow:checked ~ .button-color::after,
+#brown:checked ~ .button-color::after,
+#black:checked ~ .button-color::after,
+#blue:checked ~ .button-color::after,
+#grey:checked ~ .button-color::after {
+    color: #ce845e;
+    content: '✔';
+}
+
+.button-white {
+    background-color: #fff;
+}
+
+.button-brown {
+    background-color: #604135;
+}
+
+.button-yellow {
+    background-color: #ffcf22;
+}
+
+.button-black {
+    background-color: #000;
+}
+
+.button-grey {
+    background-color: #777;
+}
+
+.button-blue {
+    background-color: #1a3780;
+}
+
+.checkbox-popular-container {
+    align-self: center;
+}
+
+.label-container-popular {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-popular__title {
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.button-popular {
+    width: 25px;
+    height: 25px;
+
+    border-color: #888;
+    border-radius: 7px;
+    background-color: #fff;
+
+    &:hover {
+        filter: brightness(80%);
+    }
+}
+
+#popular:checked ~ .button-popular::after {
+    color: #1a3780;
+    content: '✔';
+}
+
+.no-items-text {
+    font-size: 24px;
 }

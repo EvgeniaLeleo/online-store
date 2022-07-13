@@ -33,7 +33,7 @@
         "color": "желтый",
         "quantity": "10",
         "date": "2020",
-        "popular": "нет"
+        "popular": "да"
     },
     {
         "name": "MENU стол",
@@ -69,7 +69,7 @@
         "color": "черный",
         "quantity": "7",
         "date": "2021",
-        "popular": "да"
+        "popular": "нет"
     },
     {
         "name": "Nastan шкаф",
@@ -93,7 +93,7 @@
         "color": "синий",
         "quantity": "10",
         "date": "2021",
-        "popular": "да"
+        "popular": "нет"
     },
     {
         "name": "NATRAN кровать",

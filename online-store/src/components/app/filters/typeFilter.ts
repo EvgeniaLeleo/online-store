@@ -1,5 +1,5 @@
-import showCards from './showCards';
-import { commonCheckedItems } from './commonCheckedItems';
+import showCards from '../showCards';
+import { commonCheckedItems } from '../commonCheckedItems';
 
 /**
  * Добавляет в localStorage.typeFilter выбранные чекбоксами имена товаров

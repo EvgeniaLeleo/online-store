@@ -1,3 +1,7 @@
+/**
+ * Добавление функциональности кнопки сброса фильтров
+ */
+
 import showCards from './showCards';
 
 export const addResetFiltersButtonFunctionality = () => {

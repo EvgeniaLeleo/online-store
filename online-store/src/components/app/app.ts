@@ -3,16 +3,20 @@ import requestFunction from './requestFunction';
 import showCards from './showCards';
 import { showCardsIfCheckboxNotChecked } from './showCardsIfCheckboxNotChecked';
 import { commonCheckedItems } from './commonCheckedItems';
-import typeFilter from './typeFilter';
-import { disableLinks } from './utils';
-import purposeFilter from './purposeFilter';
+import typeFilter from './filters/typeFilter';
+import { disableFooterForm, disableMainLinks } from './utils';
+import purposeFilter from './filters/purposeFilter';
+import colorFilter from './filters/colorFilter';
+import { checkCheckboxesFromLocalStorage } from './checkCheckboxesFromLocalStorage';
+import popularFilter from './filters/popularFilter';
 
 export const productContent = document.querySelectorAll<HTMLDivElement>('.product');
 
 export class App {
     start() {
         document.addEventListener('DOMContentLoaded', () => {
-            disableLinks();
+            disableMainLinks();
+            disableFooterForm();
             addResetFiltersButtonFunctionality();
 
             // проверка, есть ли что-то в localStorage
@@ -22,10 +26,11 @@ export class App {
             const colorFilterData = localStorage.getItem('colorFilter');
             const popularFilterData = localStorage.getItem('popularFilter');
 
-            let typeFilterArray: string[],
+            let typeFilterArray: string[] = [],
                 typeFilterLen,
-                purposeFilterArray: string[],
+                purposeFilterArray: string[] = [],
                 purposeFilterLen,
+                colorFilterArray: string[] = [],
                 colorFilterLen;
 
             if (typeFilterData) {
@@ -37,7 +42,8 @@ export class App {
                 purposeFilterLen = purposeFilterArray.length;
             }
             if (colorFilterData) {
-                colorFilterLen = JSON.parse(colorFilterData).length;
+                colorFilterArray = JSON.parse(colorFilterData);
+                colorFilterLen = colorFilterArray.length;
             }
 
             if (initialData && (typeFilterLen || purposeFilterLen || colorFilterLen || popularFilterData)) {
@@ -45,19 +51,18 @@ export class App {
                     showCards(commonCheckedItems(JSON.parse(initialData)));
                     typeFilter();
                     purposeFilter();
+                    colorFilter();
+                    popularFilter();
 
-                    const filterCheckboxes = document.querySelectorAll<HTMLInputElement>('.checkbox');
+                    // чекбоксы из localstorage отмечаются заново
+                    checkCheckboxesFromLocalStorage(
+                        typeFilterArray,
+                        purposeFilterArray,
+                        colorFilterArray,
+                        popularFilterData
+                    );
 
-                    // ранее отмеченные чекбоксы отмечаются заново
-                    filterCheckboxes.forEach((checkbox) => {
-                        typeFilterArray.forEach((type) => {
-                            if (checkbox.value === type) checkbox.checked = true;
-                        });
-                        purposeFilterArray.forEach((purpose) => {
-                            if (checkbox.value === purpose) checkbox.checked = true;
-                        });
-                    });
-
+                    //если ничего не отмечено, показывается все
                     showCardsIfCheckboxNotChecked();
                 }
             } else {

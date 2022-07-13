@@ -1,9 +1,8 @@
-import showCards from './showCards';
-import { commonCheckedItems } from './commonCheckedItems';
-import { showCardsIfCheckboxNotChecked } from './showCardsIfCheckboxNotChecked';
+import showCards from '../showCards';
+import { commonCheckedItems } from '../commonCheckedItems';
 
 /**
- * Добавляет в localStorage.typeFilter выбранные чекбоксы
+ * Добавляет в localStorage.purposeFilter выбранные чекбоксы
  */
 
 const purposeFilter: () => void = () => {

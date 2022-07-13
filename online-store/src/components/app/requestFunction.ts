@@ -1,6 +1,8 @@
 import showCards from './showCards';
-import typeFilter from './typeFilter';
-import purposeFilter from './purposeFilter';
+import typeFilter from './filters/typeFilter';
+import purposeFilter from './filters/purposeFilter';
+import colorFilter from './filters/colorFilter';
+import popularFilter from './filters/popularFilter';
 
 /***
  * Запрос данных из файла data.json и вывод их на текущую страницу в карточки
@@ -25,6 +27,8 @@ const requestFunction = () => {
 
             typeFilter();
             purposeFilter();
+            colorFilter();
+            popularFilter();
         }
     };
 };

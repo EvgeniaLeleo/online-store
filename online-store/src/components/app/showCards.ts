@@ -11,6 +11,11 @@ const showCards = (data: TData[]) => {
     const productContent = document.querySelector('.product-content') as HTMLDivElement;
     productContent.innerHTML = '';
 
+    if (data.length === 0) {
+        productContent.innerHTML = '<span class="no-items-text">Извините, по Вашему запросу товаров не найдено</span>';
+        return;
+    }
+
     for (let i = 0; i < data.length; i++) {
         const productCard = document.createElement('div') as HTMLDivElement;
         productCard.classList.add('product');
@@ -27,8 +32,15 @@ const showCards = (data: TData[]) => {
         const productHeading = document.createElement('h3') as HTMLHeadingElement;
         productHeading.classList.add('product__heading');
 
+        const productPriceContainer = document.createElement('div') as HTMLDivElement;
+        productPriceContainer.classList.add('product__price-container');
+
         const productPrice = document.createElement('p') as HTMLParagraphElement;
         productPrice.classList.add('product__price');
+
+        const productInCart = document.createElement('div') as HTMLDivElement;
+        productInCart.classList.add('product__in-cart');
+        productInCart.textContent = 'В корзине';
 
         const productDetails = document.createElement('div') as HTMLDivElement;
         productDetails.classList.add('product__details');
@@ -68,7 +80,9 @@ const showCards = (data: TData[]) => {
         productInfo.appendChild(productImgContainer);
         productImgContainer.appendChild(productImg);
         productInfo.appendChild(productHeading);
-        productInfo.appendChild(productPrice);
+        productInfo.appendChild(productPriceContainer);
+        productPriceContainer.appendChild(productPrice);
+        productPriceContainer.appendChild(productInCart);
 
         const productDetailsNode = productCard.getElementsByTagName('li');
 
@@ -89,6 +103,11 @@ const showCards = (data: TData[]) => {
         shadow.classList.add('shadow');
         shadow.textContent = 'Добавить товар в корзину';
         productCard.appendChild(shadow);
+
+        // const cardIcon = document.createElement('div') as HTMLDivElement;
+        // cardIcon.classList.add('card-icon');
+        // cardIcon.textContent = '🛒';
+        // productCard.appendChild(cardIcon);
 
         productContent.appendChild(productCard);
 
