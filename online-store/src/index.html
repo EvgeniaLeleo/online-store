@@ -22,9 +22,10 @@
                 <nav class="menu">
                     <span class="menu__link_inactive">Каталог</span>
                     <a class="menu__link" href="#">Корзина</a>
+                    <span class="cart-items-quantity">0</span>
                 </nav>
                 <nav class="menu-mobile">
-                    <a class="menu-mobile__link" href="#">
+                    <span class="menu-mobile__link_inactive">
                         <svg
                             class="menu-mobile__link_img"
                             width="20"
@@ -43,7 +44,7 @@
                             <rect x="15.4285" y="15.5286" width="4.57143" height="4.57143" fill="white" />
                             <rect x="15.4285" y="0.900024" width="4.57143" height="4.57143" fill="white" />
                         </svg>
-                    </a>
+                    </span>
                     <a class="menu-mobile__link" href="#">
                         <svg
                             class="menu-mobile__link_img"
@@ -59,6 +60,7 @@
                             />
                         </svg>
                     </a>
+                    <span class="cart-items-quantity">0</span>
                 </nav>
             </header>
             <div>
@@ -69,7 +71,7 @@
         <div class="filters center">
             <div><a class="link-catalog" href="#">Главная</a><span class="slash">/</span>Каталог товаров</div>
 
-            <input class="search-input" type="search" placeholder="Поиск" autofocus autocomplete="off" />
+            <input class="search-input" type="search" placeholder="Поиск" autocomplete="off" />
 
             <form class="sort" action="#">
                 <label for="item-select">Порядок:&nbsp;</label>
@@ -275,7 +277,10 @@
                         </div>
                     </div>
                 </div>
-                <button class="button resetLocalStorage">Сброс фильтров</button>
+                <div class="reset-buttons-container">
+                    <button class="button resetFilters">Сброс фильтров</button>
+                    <button class="button resetLocalStorage">Сброс LocalStorage</button>
+                </div>
             </div>
             <div class="product-content"></div>
         </section>

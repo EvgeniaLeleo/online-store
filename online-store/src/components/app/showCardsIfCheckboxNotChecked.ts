@@ -1,4 +1,4 @@
-import showCards from './showCards';
+import { showCards } from './card/showCards';
 import { TData } from './types';
 
 /**

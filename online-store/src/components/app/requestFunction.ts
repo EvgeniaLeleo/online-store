@@ -1,4 +1,4 @@
-import showCards from './showCards';
+import { showCards } from './card/showCards';
 import typeFilter from './filters/typeFilter';
 import purposeFilter from './filters/purposeFilter';
 import colorFilter from './filters/colorFilter';

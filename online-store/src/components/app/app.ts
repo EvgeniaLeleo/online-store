@@ -1,6 +1,6 @@
 import { addResetFiltersButtonFunctionality } from './addResetFiltersButtonFunctionality';
 import requestFunction from './requestFunction';
-import showCards from './showCards';
+import { showCards } from './card/showCards';
 import { showCardsIfCheckboxNotChecked } from './showCardsIfCheckboxNotChecked';
 import { commonCheckedItems } from './commonCheckedItems';
 import typeFilter from './filters/typeFilter';
@@ -10,15 +10,25 @@ import colorFilter from './filters/colorFilter';
 import { checkCheckboxesFromLocalStorage } from './checkCheckboxesFromLocalStorage';
 import popularFilter from './filters/popularFilter';
 import { disableFooterForm } from './utils/disableFooterForm';
+import { consoleFilters } from './utils/consoleFilters';
+import { showCartItemsQuantity } from './showCartItemsQuantity';
+import { addResetStorageButtonFunctionality } from './addResetStorageButtonFunctionality';
+import { resetLocalStorage } from './resetLocalStorage';
 
 export const productContent = document.querySelectorAll<HTMLDivElement>('.product');
 
 export class App {
     start() {
         document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.querySelector('.search-input') as HTMLInputElement;
+            searchInput.focus();
+
             disableMainLinks();
             disableFooterForm();
             addResetFiltersButtonFunctionality();
+            addResetStorageButtonFunctionality();
+
+            consoleFilters();
 
             // проверка, есть ли что-то в localStorage
             const initialData = localStorage.getItem('initialData');
@@ -26,13 +36,14 @@ export class App {
             const purposeFilterData = localStorage.getItem('purposeFilter');
             const colorFilterData = localStorage.getItem('colorFilter');
             const popularFilterData = localStorage.getItem('popularFilter');
+            const cartItemsData = localStorage.getItem('cartItems');
 
-            let typeFilterArray: string[] = [],
-                typeFilterLen,
-                purposeFilterArray: string[] = [],
-                purposeFilterLen,
-                colorFilterArray: string[] = [],
-                colorFilterLen;
+            let typeFilterArray: string[] = [];
+            let typeFilterLen;
+            let purposeFilterArray: string[] = [];
+            let purposeFilterLen;
+            let colorFilterArray: string[] = [];
+            let colorFilterLen;
 
             if (typeFilterData) {
                 typeFilterArray = JSON.parse(typeFilterData);
@@ -47,32 +58,30 @@ export class App {
                 colorFilterLen = colorFilterArray.length;
             }
 
-            if (initialData && (typeFilterLen || purposeFilterLen || colorFilterLen || popularFilterData)) {
+            if (
+                initialData &&
+                (typeFilterLen || purposeFilterLen || colorFilterLen || popularFilterData || cartItemsData)
+            ) {
                 if (initialData) {
                     showCards(commonCheckedItems(JSON.parse(initialData)));
+
                     typeFilter();
                     purposeFilter();
                     colorFilter();
                     popularFilter();
 
-                    // чекбоксы из localstorage отмечаются заново
                     checkCheckboxesFromLocalStorage(
                         typeFilterArray,
                         purposeFilterArray,
                         colorFilterArray,
                         popularFilterData
                     );
-
                     //если ничего не отмечено, показывается все
                     showCardsIfCheckboxNotChecked();
+                    showCartItemsQuantity();
                 }
             } else {
-                localStorage.setItem('initialData', JSON.stringify([]));
-                localStorage.setItem('typeFilter', JSON.stringify([]));
-                localStorage.setItem('purposeFilter', JSON.stringify([]));
-                localStorage.setItem('colorFilter', JSON.stringify([]));
-                localStorage.setItem('popularFilter', '');
-
+                resetLocalStorage();
                 requestFunction();
             }
         });

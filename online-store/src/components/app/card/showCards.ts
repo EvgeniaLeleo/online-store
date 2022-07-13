@@ -1,13 +1,14 @@
-import generateCardContent from './generateCardContent';
-import { TData } from './types';
-import displayAddRemoveFromCart from './displayAddRemoveFromCart';
-import toggleCart from './toggleCart';
-
 /***
- * Добавление карточек на страницу (структура и наполнение)
+ * Добавление карточек на страницу (структура и функционал)
  */
 
-const showCards = (data: TData[]) => {
+import generateCardContent from './generateCardContent';
+import { TData } from '../types';
+import { displayAddRemoveFromCart } from './displayAddRemoveFromCart';
+import { showCardsOfProductsInCart } from './showCardsOfProductsInCart';
+import { addItemToCart } from './addItemToCart';
+
+export const showCards = (data: TData[]) => {
     const productContent = document.querySelector('.product-content') as HTMLDivElement;
     productContent.innerHTML = '';
 
@@ -38,9 +39,9 @@ const showCards = (data: TData[]) => {
         const productPrice = document.createElement('p') as HTMLParagraphElement;
         productPrice.classList.add('product__price');
 
-        const productInCart = document.createElement('div') as HTMLDivElement;
-        productInCart.classList.add('product__in-cart');
-        productInCart.textContent = 'В корзине';
+        const productInCartIcon = document.createElement('div') as HTMLDivElement;
+        productInCartIcon.classList.add('product__in-cart');
+        productInCartIcon.textContent = 'В корзине';
 
         const productDetails = document.createElement('div') as HTMLDivElement;
         productDetails.classList.add('product__details');
@@ -82,7 +83,7 @@ const showCards = (data: TData[]) => {
         productInfo.appendChild(productHeading);
         productInfo.appendChild(productPriceContainer);
         productPriceContainer.appendChild(productPrice);
-        productPriceContainer.appendChild(productInCart);
+        productPriceContainer.appendChild(productInCartIcon);
 
         const productDetailsNode = productCard.getElementsByTagName('li');
 
@@ -104,18 +105,13 @@ const showCards = (data: TData[]) => {
         shadow.textContent = 'Добавить товар в корзину';
         productCard.appendChild(shadow);
 
-        // const cardIcon = document.createElement('div') as HTMLDivElement;
-        // cardIcon.classList.add('card-icon');
-        // cardIcon.textContent = '🛒';
-        // productCard.appendChild(cardIcon);
-
         productContent.appendChild(productCard);
 
         generateCardContent(data, productCard, i);
+
+        addItemToCart(productCard);
+        displayAddRemoveFromCart(productCard);
     }
 
-    displayAddRemoveFromCart();
-    toggleCart();
+    showCardsOfProductsInCart();
 };
-
-export default showCards;

@@ -1,4 +1,4 @@
-import { TData } from './types';
+import { TData } from '../types';
 
 /**
  * Заполнение карточки товара данными из массива data

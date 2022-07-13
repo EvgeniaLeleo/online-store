@@ -20,8 +20,15 @@
     .menu-mobile {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        gap: 34px;
+        align-items: flex-end;
+
+        &__link {
+            margin-right: 5px;
+        }
+
+        &__link_inactive {
+            margin-right: 34px;
+        }
 
         &__link_img {
             transition: $transit;

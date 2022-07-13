@@ -1,9 +1,9 @@
-import { TData } from './types';
-import { commonItems } from './utils/commonItems';
-
 /**
  * Формирует массив данных для отрисовки, пересекая исходные данные по фильтрам type, purpose, color, popular
  */
+
+import { TData } from './types';
+import { commonItems } from './utils/commonItems';
 
 export const commonCheckedItems: (data: TData[]) => TData[] = (data: TData[]) => {
     let tempArray: TData[] = [];
