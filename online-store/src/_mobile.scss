@@ -151,10 +151,23 @@
         font-size: 14px;
         line-height: 17px;
     }
+
+    .notification-window {
+        width: 400px;
+        height: 150px;
+    }
 }
 
 @media (max-width: 570px) {
     .product-content {
         grid-template-columns: 1fr;
+    }
+
+    .notification-window {
+        font-size: 16px;
+
+        width: 250px;
+        height: 120px;
+        padding: 10px 20px;
     }
 }

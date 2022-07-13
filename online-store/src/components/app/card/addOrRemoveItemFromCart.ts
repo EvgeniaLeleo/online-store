@@ -2,6 +2,7 @@
  * Добавляет/удаляет продукт из корзины при клике на карточку
  */
 
+import { notification } from '../notification';
 import { consoleFilters } from '../utils/consoleFilters';
 import { changeCartQuantityIcon } from './changeCartQuantityIcon';
 
@@ -23,7 +24,8 @@ export const addOrRemoveItemFromCart: (productCard: HTMLDivElement) => void = (p
             productCard.classList.remove('product__cart');
             currentShadow.textContent = 'Добавить в корзину';
         } else {
-            alert('Извините, все слоты заполнены');
+            notification();
+            // alert('Извините, все слоты заполнены');
         }
 
         localStorage.setItem('cartItems', JSON.stringify(currentCartItemsArray));
