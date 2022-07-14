@@ -1,12 +1,11 @@
-import { showCards } from '../card/showCards';
-import { commonCheckedItems } from './commonCheckedItems';
-import { consoleFilters } from '../utils/consoleFilters';
-
 /**
  * Добавляет в localStorage.popularFilter отмеченный чекбоксы
  */
 
-const popularFilter: () => void = () => {
+import { consoleFilters } from '../utils/consoleFilters';
+import { showFinalItems } from '../showFinalItems';
+
+export const popularFilter: () => void = () => {
     const checkboxPopular = document.querySelector('.checkbox-popular') as HTMLInputElement;
 
     checkboxPopular.addEventListener('change', () => {
@@ -22,14 +21,8 @@ const popularFilter: () => void = () => {
 
         localStorage.setItem('popularFilter', newPopularFilter);
 
-        const initialData = localStorage.getItem('initialData');
-
-        if (initialData) {
-            showCards(commonCheckedItems(JSON.parse(initialData)));
-        }
+        showFinalItems();
 
         consoleFilters();
     });
 };
-
-export default popularFilter;

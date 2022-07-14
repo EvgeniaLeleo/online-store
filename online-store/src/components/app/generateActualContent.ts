@@ -2,17 +2,16 @@
  * Выводит карточки товара, соответствующие данным LocalStorage, а при их отсутствии делает запрос и выводит новые данные
  */
 
-import { showCards } from './card/showCards';
+import { addSearchInputFunctionality } from './addSearchInputFunctionality';
 import { checkCheckboxesFromLocalStorage } from './checkCheckboxesFromLocalStorage';
 import colorFilter from './filters/colorFilter';
-import { commonCheckedItems } from './filters/commonCheckedItems';
-import popularFilter from './filters/popularFilter';
+import { popularFilter } from './filters/popularFilter';
 import purposeFilter from './filters/purposeFilter';
 import typeFilter from './filters/typeFilter';
 import { requestFunction } from './requestFunction';
 import { resetLocalStorage } from './resetLocalStorage';
-import { showCardsIfCheckboxNotChecked } from './showCardsIfCheckboxNotChecked';
 import { showCartItemsQuantity } from './showCartItemsQuantity';
+import { showFinalItems } from './showFinalItems';
 
 export const generateActualContent: () => void = () => {
     // проверка наличия данных в Local Storage
@@ -22,6 +21,7 @@ export const generateActualContent: () => void = () => {
     const colorFilterData = localStorage.getItem('colorFilter');
     const popularFilterData = localStorage.getItem('popularFilter');
     const cartItemsData = localStorage.getItem('cartItems');
+    const searchQuery = localStorage.getItem('searchQuery');
 
     let typeFilterArray: string[] = [];
     let typeFilterLen;
@@ -43,8 +43,12 @@ export const generateActualContent: () => void = () => {
         colorFilterLen = colorFilterArray.length;
     }
 
-    if (initialData && (typeFilterLen || purposeFilterLen || colorFilterLen || popularFilterData || cartItemsData)) {
-        showCards(commonCheckedItems(JSON.parse(initialData)));
+    if (
+        initialData &&
+        (typeFilterLen || purposeFilterLen || colorFilterLen || popularFilterData || cartItemsData || searchQuery)
+    ) {
+        const searchInput = document.querySelector('.search-input') as HTMLInputElement;
+        addSearchInputFunctionality();
 
         typeFilter();
         purposeFilter();
@@ -52,9 +56,12 @@ export const generateActualContent: () => void = () => {
         popularFilter();
 
         showCartItemsQuantity();
+
+        searchInput.value = searchQuery || '';
         checkCheckboxesFromLocalStorage(typeFilterArray, purposeFilterArray, colorFilterArray, popularFilterData);
         //если ничего не отмечено, показывается все карточки
-        showCardsIfCheckboxNotChecked();
+        // showCardsIfCheckboxNotChecked();
+        showFinalItems();
     } else {
         resetLocalStorage();
         requestFunction();

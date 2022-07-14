@@ -1,12 +1,13 @@
+/***
+ * Запрос данных из файла data.json и вывод их на текущую страницу в карточки
+ */
+
 import { showCards } from './card/showCards';
 import typeFilter from './filters/typeFilter';
 import purposeFilter from './filters/purposeFilter';
 import colorFilter from './filters/colorFilter';
-import popularFilter from './filters/popularFilter';
-
-/***
- * Запрос данных из файла data.json и вывод их на текущую страницу в карточки
- */
+import { popularFilter } from './filters/popularFilter';
+import { addSearchInputFunctionality } from './addSearchInputFunctionality';
 
 export const requestFunction: () => void = () => {
     const request = new XMLHttpRequest();
@@ -25,6 +26,7 @@ export const requestFunction: () => void = () => {
 
             showCards(data);
 
+            addSearchInputFunctionality();
             typeFilter();
             purposeFilter();
             colorFilter();

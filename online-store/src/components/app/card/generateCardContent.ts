@@ -1,8 +1,8 @@
-import { TData } from '../types';
-
 /**
  * Заполнение карточки товара данными из массива data
  */
+
+import { TData } from '../types';
 
 const generateCardContent: (data: TData[], container: HTMLDivElement, i: number) => void = (data, container, i) => {
     const img = container.querySelector('.product__img') as HTMLImageElement;

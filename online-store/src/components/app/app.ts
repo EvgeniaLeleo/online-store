@@ -1,15 +1,15 @@
 import { consoleFilters } from './utils/consoleFilters';
 import { generateActualContent } from './generateActualContent';
 import { addCommonStyles } from './addCommonStyles';
-import { addResetButtonsFunctionality } from './addResetButtonsFunctionality';
-import { addSearchInputFunctionality } from './search';
+import { addResetButtonsFunctionality } from './resetFunctionality/addResetButtonsFunctionality';
+import { addResetInputButton } from './resetFunctionality/addResetInputButton';
 
 export class App {
     start(): void {
         document.addEventListener('DOMContentLoaded', () => {
             addCommonStyles();
             addResetButtonsFunctionality();
-            addSearchInputFunctionality();
+            addResetInputButton();
 
             consoleFilters();
 

@@ -1,6 +1,5 @@
-import { showCards } from '../card/showCards';
-import { commonCheckedItems } from './commonCheckedItems';
 import { consoleFilters } from '../utils/consoleFilters';
+import { showFinalItems } from '../showFinalItems';
 
 /**
  * Добавляет в localStorage.purposeFilter выбранные чекбоксы
@@ -31,11 +30,7 @@ const purposeFilter: () => void = () => {
 
             localStorage.setItem('purposeFilter', JSON.stringify(newPurposeFilter));
 
-            const initialData = localStorage.getItem('initialData');
-
-            if (initialData) {
-                showCards(commonCheckedItems(JSON.parse(initialData)));
-            }
+            showFinalItems();
 
             consoleFilters();
         });

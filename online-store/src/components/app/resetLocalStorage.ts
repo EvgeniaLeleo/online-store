@@ -9,4 +9,5 @@ export const resetLocalStorage: () => void = () => {
     localStorage.setItem('colorFilter', JSON.stringify([]));
     localStorage.setItem('popularFilter', '');
     localStorage.setItem('cartItems', JSON.stringify([]));
+    localStorage.setItem('searchQuery', '');
 };

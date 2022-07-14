@@ -1,6 +1,7 @@
 /**
  * Блокирует все ссылки на странице, кроме copyright и RS Logo
  */
+
 export const disableMainLinks: () => void = () => {
     const top = document.querySelector('.top_catalog') as HTMLDivElement;
     const searchContainer = document.querySelector('.search-container') as HTMLDivElement;

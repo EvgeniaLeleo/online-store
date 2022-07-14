@@ -1,10 +1,9 @@
-import { showCards } from '../card/showCards';
-import { commonCheckedItems } from './commonCheckedItems';
-import { consoleFilters } from '../utils/consoleFilters';
-
 /**
  * Добавляет в localStorage.colorFilter выбранные чекбоксы
  */
+
+import { consoleFilters } from '../utils/consoleFilters';
+import { showFinalItems } from '../showFinalItems';
 
 const colorFilter: () => void = () => {
     const checkboxColor = document.querySelectorAll<HTMLInputElement>('.checkbox-color');
@@ -46,11 +45,7 @@ const colorFilter: () => void = () => {
 
             localStorage.setItem('colorFilter', JSON.stringify(newColorFilter));
 
-            const initialData = localStorage.getItem('initialData');
-
-            if (initialData) {
-                showCards(commonCheckedItems(JSON.parse(initialData)));
-            }
+            showFinalItems();
 
             consoleFilters();
         });

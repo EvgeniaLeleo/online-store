@@ -1,10 +1,9 @@
-import { showCards } from '../card/showCards';
-import { commonCheckedItems } from './commonCheckedItems';
-import { consoleFilters } from '../utils/consoleFilters';
-
 /**
  * Добавляет в localStorage.typeFilter выбранные чекбоксами имена товаров
  */
+
+import { consoleFilters } from '../utils/consoleFilters';
+import { showFinalItems } from '../showFinalItems';
 
 const typeFilter: () => void = () => {
     const checkboxType = document.querySelectorAll<HTMLInputElement>('.checkbox-type');
@@ -41,11 +40,7 @@ const typeFilter: () => void = () => {
 
             localStorage.setItem('typeFilter', JSON.stringify(newTypeFilter));
 
-            const initialData = localStorage.getItem('initialData');
-
-            if (initialData) {
-                showCards(commonCheckedItems(JSON.parse(initialData)));
-            }
+            showFinalItems();
 
             consoleFilters();
         });

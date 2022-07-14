@@ -25,7 +25,6 @@ export const addOrRemoveItemFromCart: (productCard: HTMLDivElement) => void = (p
             currentShadow.textContent = 'Добавить в корзину';
         } else {
             notification();
-            // alert('Извините, все слоты заполнены');
         }
 
         localStorage.setItem('cartItems', JSON.stringify(currentCartItemsArray));

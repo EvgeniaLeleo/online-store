@@ -1,5 +1,5 @@
-import { showCards } from './card/showCards';
-import { TData } from './types';
+import { showCards } from '../card/showCards';
+import { TData } from '../types';
 
 /**
  * Проверка чекбоксов на checked и вывод начальных данных в случае false
