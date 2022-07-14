@@ -3,11 +3,11 @@
  */
 export const disableMainLinks: () => void = () => {
     const top = document.querySelector('.top_catalog') as HTMLDivElement;
-    const filters = document.querySelector('.filters') as HTMLDivElement;
+    const searchContainer = document.querySelector('.search-container') as HTMLDivElement;
     const footerMainInformation = document.querySelector('.footer__main-information') as HTMLDivElement;
 
     const linksTop = top.getElementsByTagName('a');
-    const linksFilters = filters.getElementsByTagName('a');
+    const linksFilters = searchContainer.getElementsByTagName('a');
     const linksFooter = footerMainInformation.getElementsByTagName('a');
 
     for (let i = 0; i < linksTop.length; i++) {
