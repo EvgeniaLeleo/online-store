@@ -104,6 +104,10 @@
         }
     }
 
+    .product__img_container {
+        height: 107px;
+    }
+
     .footer {
         &__info {
             gap: 100px;
@@ -161,6 +165,10 @@
 @media (max-width: 570px) {
     .product-content {
         grid-template-columns: 1fr;
+    }
+
+    .product__img_container {
+        height: auto;
     }
 
     .notification-window {
