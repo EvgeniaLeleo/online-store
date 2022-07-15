@@ -2,65 +2,49 @@
  * Выводит карточки товара, соответствующие данным LocalStorage, а при их отсутствии делает запрос и выводит новые данные
  */
 
-import { addSearchInputFunctionality } from './addSearchInputFunctionality';
-import { checkCheckboxesFromLocalStorage } from './checkCheckboxesFromLocalStorage';
-import colorFilter from './filters/colorFilter';
-import { popularFilter } from './filters/popularFilter';
-import purposeFilter from './filters/purposeFilter';
-import typeFilter from './filters/typeFilter';
+import { checkCheckboxesFromLocalStorage } from './visualAndInputs/checkCheckboxesFromLocalStorage';
 import { requestFunction } from './requestFunction';
 import { resetLocalStorage } from './resetLocalStorage';
-import { showCartItemsQuantity } from './showCartItemsQuantity';
+import { showCartItemsQuantity } from './visualAndInputs/showCartItemsQuantity';
 import { showFinalItems } from './showFinalItems';
+import { addFunctionality } from './addFunctionality';
 
 export const generateActualContent: () => void = () => {
-    // проверка наличия данных в Local Storage
     const initialData = localStorage.getItem('initialData');
-    const typeFilterData = localStorage.getItem('typeFilter');
-    const purposeFilterData = localStorage.getItem('purposeFilter');
-    const colorFilterData = localStorage.getItem('colorFilter');
-    const popularFilterData = localStorage.getItem('popularFilter');
-    const cartItemsData = localStorage.getItem('cartItems');
-    const searchQuery = localStorage.getItem('searchQuery');
+    const typeFilterData = localStorage.getItem('typeFilter') || '';
+    const purposeFilterData = localStorage.getItem('purposeFilter') || '';
+    const colorFilterData = localStorage.getItem('colorFilter') || '';
+    const popularFilterData = localStorage.getItem('popularFilter') || '';
+    const cartItemsData = localStorage.getItem('cartItems') || '';
+    const searchQuery = localStorage.getItem('searchQuery') || '';
+    const selectOption = localStorage.getItem('selectOption') || '';
 
-    let typeFilterArray: string[] = [];
-    let typeFilterLen;
-    let purposeFilterArray: string[] = [];
-    let purposeFilterLen;
-    let colorFilterArray: string[] = [];
-    let colorFilterLen;
-
-    if (typeFilterData) {
-        typeFilterArray = JSON.parse(typeFilterData);
-        typeFilterLen = typeFilterArray.length;
-    }
-    if (purposeFilterData) {
-        purposeFilterArray = JSON.parse(purposeFilterData);
-        purposeFilterLen = purposeFilterArray.length;
-    }
-    if (colorFilterData) {
-        colorFilterArray = JSON.parse(colorFilterData);
-        colorFilterLen = colorFilterArray.length;
-    }
+    const typeFilterArray: string[] = JSON.parse(typeFilterData);
+    const purposeFilterArray: string[] = JSON.parse(purposeFilterData);
+    const colorFilterArray: string[] = JSON.parse(colorFilterData);
 
     if (
         initialData &&
-        (typeFilterLen || purposeFilterLen || colorFilterLen || popularFilterData || cartItemsData || searchQuery)
+        (typeFilterArray.length ||
+            purposeFilterArray.length ||
+            colorFilterArray.length ||
+            popularFilterData ||
+            cartItemsData ||
+            searchQuery ||
+            selectOption)
     ) {
-        const searchInput = document.querySelector('.search-input') as HTMLInputElement;
-        addSearchInputFunctionality();
-
-        typeFilter();
-        purposeFilter();
-        colorFilter();
-        popularFilter();
+        addFunctionality();
 
         showCartItemsQuantity();
 
+        const searchInput = document.querySelector('.search-input') as HTMLInputElement;
         searchInput.value = searchQuery || '';
+
+        const select = document.querySelector('.select') as HTMLSelectElement;
+        select.value = selectOption || 'year_new-old';
+
         checkCheckboxesFromLocalStorage(typeFilterArray, purposeFilterArray, colorFilterArray, popularFilterData);
-        //если ничего не отмечено, показывается все карточки
-        // showCardsIfCheckboxNotChecked();
+
         showFinalItems();
     } else {
         resetLocalStorage();

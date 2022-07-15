@@ -5,7 +5,7 @@
 import { consoleFilters } from '../utils/consoleFilters';
 import { showFinalItems } from '../showFinalItems';
 
-const typeFilter: () => void = () => {
+export const addTypeFilter: () => void = () => {
     const checkboxType = document.querySelectorAll<HTMLInputElement>('.checkbox-type');
 
     const checkboxBed = document.getElementById('bed') as HTMLInputElement;
@@ -46,5 +46,3 @@ const typeFilter: () => void = () => {
         });
     });
 };
-
-export default typeFilter;

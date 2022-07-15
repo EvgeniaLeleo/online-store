@@ -3,15 +3,21 @@
  */
 
 import { showCards } from './card/showCards';
-import { commonCheckedItems } from './filters/commonCheckedItems';
-import { getSearchQueryArray } from './getSearchQueryArray';
+import { commonCheckedItems } from './checkboxes/commonCheckedItems';
+import { getSearchQueryArray } from './search/getSearchQueryArray';
+import { getSelectedArray } from './select/getSelectedArray';
 import { commonItems } from './utils/commonItems';
 
-export const showFinalItems = () => {
-    const initialData = localStorage.getItem('initialData');
+export const showFinalItems: () => void = () => {
+    const initialData = localStorage.getItem('initialData') || '';
 
-    if (initialData) {
-        const searchInput = document.querySelector('.search-input') as HTMLInputElement;
-        showCards(commonItems(getSearchQueryArray(searchInput), commonCheckedItems(JSON.parse(initialData))));
-    }
+    const searchInput = document.querySelector('.search-input') as HTMLInputElement;
+    const selectInput = document.querySelector('.select') as HTMLSelectElement;
+
+    showCards(
+        commonItems(
+            getSelectedArray(selectInput),
+            commonItems(getSearchQueryArray(searchInput), commonCheckedItems(JSON.parse(initialData)))
+        )
+    );
 };

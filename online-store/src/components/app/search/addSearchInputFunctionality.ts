@@ -3,9 +3,9 @@
  */
 
 import { getSearchQueryArray } from './getSearchQueryArray';
-import { showFinalItems } from './showFinalItems';
+import { showFinalItems } from '../showFinalItems';
 
-export const addSearchInputFunctionality = () => {
+export const addSearchInputFunctionality: () => void = () => {
     const searchInput = document.querySelector('.search-input') as HTMLInputElement;
     getSearchQueryArray(searchInput);
 

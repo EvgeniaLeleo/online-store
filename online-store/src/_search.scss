@@ -48,12 +48,16 @@
 }
 
 #white:checked ~ .button-color::after,
-#yellow:checked ~ .button-color::after,
+#yellow:checked ~ .button-color::after {
+    color: #333;
+    content: '✔';
+}
+
 #brown:checked ~ .button-color::after,
 #black:checked ~ .button-color::after,
 #blue:checked ~ .button-color::after,
 #grey:checked ~ .button-color::after {
-    color: #ce845e;
+    color: #fff;
     content: '✔';
 }
 

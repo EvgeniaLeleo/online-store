@@ -20,7 +20,9 @@ const generateCardContent: (data: TData[], container: HTMLDivElement, i: number)
     const popular = container.querySelector('.product__popular') as HTMLSpanElement;
 
     name.textContent = data[i].name;
-    price.textContent = data[i].price;
+    const formattedPrice = data[i].price.split('');
+    formattedPrice.splice(-3, 0, ' ');
+    price.textContent = formattedPrice.join('');
     description.textContent = data[i].description;
     purpose.textContent = data[i].purpose;
     color.textContent = data[i].color;

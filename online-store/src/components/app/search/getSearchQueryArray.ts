@@ -2,7 +2,7 @@
  * Формирует массив товаров, соответствующих данным из строки поиска
  */
 
-import { TData } from './types';
+import { TData } from '../types';
 
 export const getSearchQueryArray: (searchInput: HTMLInputElement) => TData[] = (searchInput) => {
     const searchQuery = searchInput.value;

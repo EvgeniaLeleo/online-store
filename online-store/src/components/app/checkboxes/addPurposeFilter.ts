@@ -5,7 +5,7 @@ import { showFinalItems } from '../showFinalItems';
  * Добавляет в localStorage.purposeFilter выбранные чекбоксы
  */
 
-const purposeFilter: () => void = () => {
+export const addPurposeFilter: () => void = () => {
     const checkboxPurpose = document.querySelectorAll<HTMLInputElement>('.checkbox-purpose');
 
     const checkboxBedroom = document.getElementById('bedroom') as HTMLInputElement;
@@ -36,5 +36,3 @@ const purposeFilter: () => void = () => {
         });
     });
 };
-
-export default purposeFilter;

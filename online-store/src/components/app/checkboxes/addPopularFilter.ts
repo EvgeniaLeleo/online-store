@@ -5,7 +5,7 @@
 import { consoleFilters } from '../utils/consoleFilters';
 import { showFinalItems } from '../showFinalItems';
 
-export const popularFilter: () => void = () => {
+export const addPopularFilter: () => void = () => {
     const checkboxPopular = document.querySelector('.checkbox-popular') as HTMLInputElement;
 
     checkboxPopular.addEventListener('change', () => {

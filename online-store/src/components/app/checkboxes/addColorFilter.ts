@@ -5,7 +5,7 @@
 import { consoleFilters } from '../utils/consoleFilters';
 import { showFinalItems } from '../showFinalItems';
 
-const colorFilter: () => void = () => {
+export const addColorFilter: () => void = () => {
     const checkboxColor = document.querySelectorAll<HTMLInputElement>('.checkbox-color');
 
     const checkboxWhite = document.getElementById('white') as HTMLInputElement;
@@ -51,5 +51,3 @@ const colorFilter: () => void = () => {
         });
     });
 };
-
-export default colorFilter;

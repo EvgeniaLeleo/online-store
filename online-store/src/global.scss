@@ -133,7 +133,7 @@ body {
     font-size: 16px;
     line-height: 20px;
 
-    width: 288px;
+    width: 300px;
     height: 41px;
     padding-left: 24px;
     padding-right: 40px;
@@ -209,7 +209,7 @@ body {
 }
 
 .sort {
-    width: 288px;
+    width: 300px;
     height: 41px;
     display: flex;
     align-items: center;
@@ -224,6 +224,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 20px;
+
     border: none;
     outline: none;
     appearance: none;
@@ -267,7 +268,7 @@ body {
     gap: 16px;
 }
 
-// Карточки
+/* Карточки */
 
 .product-box {
     padding-top: 72px;
@@ -551,6 +552,10 @@ body {
         min-height: 207px;
         padding-top: 32px;
         padding-bottom: 40px;
+    }
+
+    &__logo {
+        margin-bottom: 30px;
     }
 
     &__content {

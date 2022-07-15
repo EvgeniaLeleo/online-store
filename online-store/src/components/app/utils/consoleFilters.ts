@@ -30,8 +30,10 @@ export const consoleFilters: () => void = () => {
     console.log(
         `Тип: ${typeLen > 2 ? localStorage.getItem('typeFilter') : 'не выбран'},\nназначение: ${
             purposeLen > 2 ? localStorage.getItem('purposeFilter') : 'не выбрано'
-        },\nцвет: ${colorLen > 2 ? localStorage.getItem('colorFilter') : 'не выбран'}\nпопулярное: ${
+        },\nцвет: ${colorLen > 2 ? localStorage.getItem('colorFilter') : 'не выбран'},\nпопулярное: ${
             localStorage.getItem('popularFilter') ? 'да' : 'не выбрано'
-        }\n\nКорзина: ${cartLen > 2 ? localStorage.getItem('cartItems') : 'пуста'}`
+        }\n\nПоиск: ${localStorage.getItem('searchQuery') ? localStorage.getItem('searchQuery') : ''}\nКорзина: ${
+            cartLen > 2 ? localStorage.getItem('cartItems') : 'пуста'
+        }`
     );
 };

@@ -2,7 +2,7 @@
  * Всплывающее уведомление о превышении количества товаров в корзине
  */
 
-export const notification = () => {
+export const notification: () => void = () => {
     const screenOverlay = document.createElement('div');
     screenOverlay.classList.add('screen-overlay');
     screenOverlay.style.opacity = '1';

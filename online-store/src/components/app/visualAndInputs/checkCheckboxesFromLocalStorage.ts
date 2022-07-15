@@ -1,5 +1,5 @@
 /**
- * Чекбоксы из localstorage отмечаются заново
+ * Чекбоксы из localstorage отмечаются заново после сброса настроек
  */
 
 export const checkCheckboxesFromLocalStorage: (

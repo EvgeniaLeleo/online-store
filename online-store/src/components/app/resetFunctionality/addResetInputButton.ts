@@ -3,8 +3,9 @@
  */
 
 import { showFinalItems } from '../showFinalItems';
+import { consoleFilters } from '../utils/consoleFilters';
 
-export const addResetInputButton = () => {
+export const addResetInputButton: () => void = () => {
     const searchInput = document.querySelector('.search-input') as HTMLInputElement;
     const searchInputContainer = document.querySelector('.search-input-container') as HTMLInputElement;
     const resetInputButton = document.createElement('div');
@@ -16,7 +17,10 @@ export const addResetInputButton = () => {
     resetInputButton.addEventListener('click', () => {
         searchInput.value = '';
         searchInput.focus();
+        localStorage.setItem('searchQuery', '');
 
         showFinalItems();
+
+        consoleFilters();
     });
 };
