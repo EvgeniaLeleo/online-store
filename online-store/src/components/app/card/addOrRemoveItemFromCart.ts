@@ -2,8 +2,7 @@
  * Добавляет/удаляет продукт из корзины при клике на карточку
  */
 
-import { AlertWindow } from '../notification';
-import { consoleFilters } from '../utils/consoleFilters';
+import { AlertWindow } from '../AlertWindow';
 import { changeCartQuantityIcon } from './changeCartQuantityIcon';
 
 export const addOrRemoveItemFromCart: (productCard: HTMLDivElement) => void = (productCard) => {
@@ -33,6 +32,5 @@ export const addOrRemoveItemFromCart: (productCard: HTMLDivElement) => void = (p
         localStorage.setItem('cartItems', JSON.stringify(currentCartItemsArray));
 
         changeCartQuantityIcon(currentCartItemsArray);
-        consoleFilters();
     });
 };

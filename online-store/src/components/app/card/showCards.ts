@@ -94,8 +94,6 @@ export const showCards: (data: TData[]) => void = (data) => {
         productDetailsNode[1].appendChild(productColor);
         productDetailsNode[2].textContent = 'Год выхода: ';
         productDetailsNode[2].appendChild(productDate);
-        // productDetailsNode[4].textContent = 'Количество: ';
-        // productDetailsNode[4].appendChild(productQuantity);
         productDetailsNode[3].textContent = 'Популярное: ';
         productDetailsNode[3].appendChild(productPopular);
         productDetailsNode[4].appendChild(productDescription);

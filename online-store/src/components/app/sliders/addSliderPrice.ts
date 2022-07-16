@@ -4,7 +4,7 @@
 
 import * as noUiSlider from 'nouislider';
 
-export const addSliderPrice = () => {
+export const addSliderPrice: () => void = () => {
     const initialRangePrice = [1000, 100000];
     const sliderPrice = document.querySelector('.slider_price') as noUiSlider.target;
 

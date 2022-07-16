@@ -15,7 +15,6 @@ const generateCardContent: (data: TData[], container: HTMLDivElement, i: number)
     const description = container.querySelector('.product__description') as HTMLSpanElement;
     const purpose = container.querySelector('.product__purpose') as HTMLSpanElement;
     const color = container.querySelector('.product__color') as HTMLSpanElement;
-    // const quantity = container.querySelector('.product__quantity') as HTMLSpanElement;
     const date = container.querySelector('.product__date') as HTMLSpanElement;
     const popular = container.querySelector('.product__popular') as HTMLSpanElement;
 
@@ -26,7 +25,6 @@ const generateCardContent: (data: TData[], container: HTMLDivElement, i: number)
     description.textContent = data[i].description;
     purpose.textContent = data[i].purpose;
     color.textContent = data[i].color;
-    // quantity.textContent = data[i].quantity;
     date.textContent = data[i].date;
     popular.textContent = data[i].popular;
 };

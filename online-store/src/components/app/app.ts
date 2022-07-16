@@ -1,4 +1,3 @@
-import { consoleFilters } from './utils/consoleFilters';
 import { generateActualContent } from './generateActualContent';
 import { addCommonStyles } from './visualAndInputs/addCommonStyles';
 import { addResetButtonsFunctionality } from './resetFunctionality/addResetButtonsFunctionality';
@@ -17,8 +16,6 @@ export class App {
             addResetButtonsFunctionality();
             addSliderPrice();
             addSliderYear();
-
-            consoleFilters();
 
             generateActualContent();
         });

@@ -5,7 +5,7 @@
 import { showFinalItems } from '../showFinalItems';
 import * as noUiSlider from 'nouislider';
 
-export const addSliderYearFunctionality = () => {
+export const addSliderYearFunctionality: () => void = () => {
     const sliderYear = document.querySelector('.slider_year') as noUiSlider.target;
     const rangeYearArray: string[] = [];
 

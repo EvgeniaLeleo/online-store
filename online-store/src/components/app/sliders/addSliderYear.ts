@@ -4,7 +4,7 @@
 
 import * as noUiSlider from 'nouislider';
 
-export const addSliderYear = () => {
+export const addSliderYear: () => void = () => {
     const initialRangeYear = [2017, 2022];
     const sliderYear = document.querySelector('.slider_year') as noUiSlider.target;
 

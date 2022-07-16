@@ -9,7 +9,6 @@ import { getSelectedArray } from './select/getSelectedArray';
 import { commonItems } from './utils/commonItems';
 import * as noUiSlider from 'nouislider';
 import { getPriceRangeArray } from './sliders/getPriceRangeArray';
-import { consoleFilters } from './utils/consoleFilters';
 import { getYearRangeArray } from './sliders/getYearRangeArray';
 
 export const showFinalItems: () => void = () => {
@@ -32,6 +31,4 @@ export const showFinalItems: () => void = () => {
             )
         )
     );
-
-    consoleFilters();
 };

@@ -5,7 +5,7 @@
 import { showFinalItems } from '../showFinalItems';
 import * as noUiSlider from 'nouislider';
 
-export const addSliderPriceFunctionality = () => {
+export const addSliderPriceFunctionality: () => void = () => {
     const sliderPrice = document.querySelector('.slider_price') as noUiSlider.target;
     const rangePriceArray: string[] = [];
 
