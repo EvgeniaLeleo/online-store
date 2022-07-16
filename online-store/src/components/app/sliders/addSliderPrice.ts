@@ -5,7 +5,7 @@
 import * as noUiSlider from 'nouislider';
 
 export const addSliderPrice = () => {
-    const initialRangePrice = [100, 100000];
+    const initialRangePrice = [1000, 100000];
     const sliderPrice = document.querySelector('.slider_price') as noUiSlider.target;
 
     noUiSlider.create(sliderPrice, {
@@ -16,7 +16,7 @@ export const addSliderPrice = () => {
             min: initialRangePrice[0],
             max: initialRangePrice[1],
         },
-        step: 100,
+        step: 1000,
         format: {
             to: function (value) {
                 return Math.floor(value);

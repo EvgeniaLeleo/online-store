@@ -14,7 +14,7 @@ export const resetLocalStorage: () => void = () => {
     localStorage.setItem('colorFilter', JSON.stringify([]));
     localStorage.setItem('popularFilter', '');
 
-    const initialRangePrice = [100, 100000];
+    const initialRangePrice = [1000, 100000];
     localStorage.setItem('rangePrice', JSON.stringify(initialRangePrice));
 
     const initialRangeYear = [2017, 2022];
