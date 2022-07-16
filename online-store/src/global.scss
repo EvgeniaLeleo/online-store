@@ -74,6 +74,7 @@ body {
 .top_catalog {
     min-height: 200px;
     padding-bottom: 50px;
+
     background-image: url(../static/top-catalog.jpg);
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -249,23 +250,16 @@ body {
 /* Каталог */
 
 .filters-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 36px;
+
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 42px;
 }
 
-.checkbox-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-
-    margin-bottom: 30px;
-}
-
-.reset-buttons-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+.button_reset {
+    max-width: 150px;
 }
 
 /* Карточки */
@@ -727,6 +721,19 @@ body {
     .footer__content {
         width: 100%;
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 1200px) {
+    .filters-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .checkbox-color-container,
+    .checkbox-popular-container,
+    .button_reset {
+        order: 1;
     }
 }
 

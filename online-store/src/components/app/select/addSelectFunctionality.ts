@@ -13,9 +13,6 @@ export const addSelectFunctionality: () => void = () => {
     select.addEventListener('input', () => {
         const selectOption = select.value;
         localStorage.setItem('selectOption', selectOption);
-
-        getSelectedArray(select);
-
         showFinalItems();
     });
 };

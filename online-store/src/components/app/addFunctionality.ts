@@ -8,10 +8,14 @@ import { addPurposeFilter } from './checkboxes/addPurposeFilter';
 import { addTypeFilter } from './checkboxes/addTypeFilter';
 import { addSearchInputFunctionality } from './search/addSearchInputFunctionality';
 import { addSelectFunctionality } from './select/addSelectFunctionality';
+import { addSliderPriceFunctionality } from './sliders/addSliderPriceFunctionality';
+import { addSliderYearFunctionality } from './sliders/addSliderYearFunctionality';
 
-export const addFunctionality = () => {
+export const addFunctionality: () => void = () => {
     addSearchInputFunctionality();
     addSelectFunctionality();
+    addSliderPriceFunctionality();
+    addSliderYearFunctionality();
 
     addTypeFilter();
     addPurposeFilter();

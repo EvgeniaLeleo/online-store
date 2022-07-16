@@ -3,7 +3,6 @@
  */
 
 import { showFinalItems } from '../showFinalItems';
-import { consoleFilters } from '../utils/consoleFilters';
 
 export const addResetInputButton: () => void = () => {
     const searchInput = document.querySelector('.search-input') as HTMLInputElement;
@@ -20,7 +19,5 @@ export const addResetInputButton: () => void = () => {
         localStorage.setItem('searchQuery', '');
 
         showFinalItems();
-
-        consoleFilters();
     });
 };

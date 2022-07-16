@@ -7,6 +7,8 @@ import { consoleFilters } from '../utils/consoleFilters';
 import { changeCartQuantityIcon } from './changeCartQuantityIcon';
 
 export const addOrRemoveItemFromCart: (productCard: HTMLDivElement) => void = (productCard) => {
+    const maxCart = 10;
+
     productCard.addEventListener('click', () => {
         const currentCartItems = localStorage.getItem('cartItems') as string;
         const currentCartItemsArray: string[] = JSON.parse(currentCartItems);
@@ -15,7 +17,7 @@ export const addOrRemoveItemFromCart: (productCard: HTMLDivElement) => void = (p
         const itemName = productHeading.textContent as string;
         const currentShadow = productCard.querySelector('.shadow') as HTMLDivElement;
 
-        if (!currentCartItemsArray.includes(itemName) && currentCartItemsArray.length < 3) {
+        if (!currentCartItemsArray.includes(itemName) && currentCartItemsArray.length < maxCart) {
             currentCartItemsArray.push(itemName);
             productCard.classList.add('product__cart');
             currentShadow.textContent = 'Удалить из корзины';
@@ -30,7 +32,6 @@ export const addOrRemoveItemFromCart: (productCard: HTMLDivElement) => void = (p
         localStorage.setItem('cartItems', JSON.stringify(currentCartItemsArray));
 
         changeCartQuantityIcon(currentCartItemsArray);
-
         consoleFilters();
     });
 };

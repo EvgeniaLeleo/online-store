@@ -2,7 +2,6 @@
  * Добавляет в localStorage.typeFilter выбранные чекбоксами имена товаров
  */
 
-import { consoleFilters } from '../utils/consoleFilters';
 import { showFinalItems } from '../showFinalItems';
 
 export const addTypeFilter: () => void = () => {
@@ -41,8 +40,6 @@ export const addTypeFilter: () => void = () => {
             localStorage.setItem('typeFilter', JSON.stringify(newTypeFilter));
 
             showFinalItems();
-
-            consoleFilters();
         });
     });
 };

@@ -70,7 +70,10 @@
 
         <main class="center">
             <div class="search-container">
-                <div><a class="link-catalog" href="#">Главная</a><span class="slash">/</span>Каталог товаров</div>
+                <div>
+                    <a class="link-catalog" href="#">Главная</a>
+                    <span class="slash">/</span>Каталог товаров
+                </div>
 
                 <div class="search-input-container">
                     <input class="search-input" type="search" placeholder="Поиск" autocomplete="off" />
@@ -90,199 +93,204 @@
             </div>
 
             <div class="filters-container">
-                <div class="checkbox-container">
-                    <div class="checkbox-type-container">
-                        <p class="checkbox-type__title">Вид мебели:</p>
+                <div class="checkbox-type-container">
+                    <p class="checkbox-type__title">Вид мебели:</p>
 
-                        <div class="label-container label-container-type">
-                            <label class="checkbox-label checkbox-label-bed">
-                                <input
-                                    class="checkbox checkbox-type"
-                                    type="checkbox"
-                                    name="type"
-                                    id="bed"
-                                    value="кровать"
-                                />
-                                <span class="button">Кровать</span>
-                            </label>
+                    <div class="label-container label-container-type">
+                        <label class="checkbox-label checkbox-label-bed">
+                            <input
+                                class="checkbox checkbox-type"
+                                type="checkbox"
+                                name="type"
+                                id="bed"
+                                value="кровать"
+                            />
+                            <span class="button">Кровать</span>
+                        </label>
 
-                            <label class="checkbox-label checkbox-label-sofa">
-                                <input
-                                    class="checkbox checkbox-type"
-                                    type="checkbox"
-                                    name="type"
-                                    id="sofa"
-                                    value="диван"
-                                />
-                                <span class="button">Диван</span>
-                            </label>
+                        <label class="checkbox-label checkbox-label-sofa">
+                            <input class="checkbox checkbox-type" type="checkbox" name="type" id="sofa" value="диван" />
+                            <span class="button">Диван</span>
+                        </label>
 
-                            <label class="checkbox-label checkbox-label-armchair">
-                                <input
-                                    class="checkbox checkbox-type"
-                                    type="checkbox"
-                                    name="type"
-                                    id="armchair"
-                                    value="кресло"
-                                />
-                                <span class="button">Кресло</span>
-                            </label>
+                        <label class="checkbox-label checkbox-label-armchair">
+                            <input
+                                class="checkbox checkbox-type"
+                                type="checkbox"
+                                name="type"
+                                id="armchair"
+                                value="кресло"
+                            />
+                            <span class="button">Кресло</span>
+                        </label>
 
-                            <label class="checkbox-label checkbox-label-table">
-                                <input
-                                    class="checkbox checkbox-type"
-                                    type="checkbox"
-                                    name="type"
-                                    id="table"
-                                    value="стол"
-                                />
-                                <span class="button">Стол</span>
-                            </label>
+                        <label class="checkbox-label checkbox-label-table">
+                            <input class="checkbox checkbox-type" type="checkbox" name="type" id="table" value="стол" />
+                            <span class="button">Стол</span>
+                        </label>
 
-                            <label class="checkbox-label checkbox-label-wardrobe">
-                                <input
-                                    class="checkbox checkbox-type"
-                                    type="checkbox"
-                                    name="type"
-                                    id="wardrobe"
-                                    value="шкаф"
-                                />
-                                <span class="button">Шкаф</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="checkbox-purpose-container">
-                        <p class="checkbox-purpose__title">Назначение:</p>
-
-                        <div class="label-container label-container-purose">
-                            <label class="checkbox-label checkbox-label-bedroom">
-                                <input
-                                    class="checkbox checkbox-purpose"
-                                    type="checkbox"
-                                    name="type"
-                                    id="bedroom"
-                                    value="спальня"
-                                />
-                                <span class="button">Спальня</span>
-                            </label>
-
-                            <label class="checkbox-label checkbox-label-livingroom">
-                                <input
-                                    class="checkbox checkbox-purpose"
-                                    type="checkbox"
-                                    name="type"
-                                    id="livingroom"
-                                    value="гостиная"
-                                />
-                                <span class="button">Гостиная</span>
-                            </label>
-
-                            <label class="checkbox-label checkbox-label-diningroom">
-                                <input
-                                    class="checkbox checkbox-purpose"
-                                    type="checkbox"
-                                    name="type"
-                                    id="diningroom"
-                                    value="столовая"
-                                />
-                                <span class="button">Столовая</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="checkbox-color-container">
-                        <p class="checkbox-color__title">Цвет:</p>
-
-                        <div class="label-container label-container-color">
-                            <label class="checkbox-label checkbox-label-white">
-                                <input
-                                    class="checkbox checkbox-color"
-                                    type="checkbox"
-                                    name="color"
-                                    id="white"
-                                    value="белый"
-                                />
-                                <span class="button-color button-white"></span>
-                            </label>
-
-                            <label class="checkbox-label checkbox-label-yellow">
-                                <input
-                                    class="checkbox checkbox-color"
-                                    type="checkbox"
-                                    name="color"
-                                    id="yellow"
-                                    value="желтый"
-                                />
-                                <span class="button-color button-yellow"></span>
-                            </label>
-
-                            <label class="checkbox-label checkbox-label-brown">
-                                <input
-                                    class="checkbox checkbox-color"
-                                    type="checkbox"
-                                    name="color"
-                                    id="brown"
-                                    value="коричневый"
-                                />
-                                <span class="button-color button-brown"></span>
-                            </label>
-
-                            <label class="checkbox-label checkbox-label-black">
-                                <input
-                                    class="checkbox checkbox-color"
-                                    type="checkbox"
-                                    name="color"
-                                    id="black"
-                                    value="черный"
-                                />
-                                <span class="button-color button-black"></span>
-                            </label>
-
-                            <label class="checkbox-label checkbox-label-blue">
-                                <input
-                                    class="checkbox checkbox-color"
-                                    type="checkbox"
-                                    name="color"
-                                    id="blue"
-                                    value="синий"
-                                />
-                                <span class="button-color button-blue"></span>
-                            </label>
-
-                            <label class="checkbox-label checkbox-label-grey">
-                                <input
-                                    class="checkbox checkbox-color"
-                                    type="checkbox"
-                                    name="color"
-                                    id="grey"
-                                    value="серый"
-                                />
-                                <span class="button-color button-grey"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="checkbox-popular-container">
-                        <div class="label-container label-container-popular">
-                            <p class="checkbox-popular__title">Только популярные:</p>
-                            <label class="checkbox-label checkbox-label-popular">
-                                <input
-                                    class="checkbox checkbox-popular"
-                                    type="checkbox"
-                                    name="popular"
-                                    id="popular"
-                                    value=""
-                                />
-                                <span class="button-popular"> </span>
-                            </label>
-                        </div>
+                        <label class="checkbox-label checkbox-label-wardrobe">
+                            <input
+                                class="checkbox checkbox-type"
+                                type="checkbox"
+                                name="type"
+                                id="wardrobe"
+                                value="шкаф"
+                            />
+                            <span class="button">Шкаф</span>
+                        </label>
                     </div>
                 </div>
-                <div class="reset-buttons-container">
-                    <button class="button resetFilters">Сброс фильтров</button>
-                    <button class="button resetLocalStorage">Сброс LocalStorage</button>
+
+                <div class="checkbox-purpose-container">
+                    <p class="checkbox-purpose__title">Назначение:</p>
+
+                    <div class="label-container label-container-purose">
+                        <label class="checkbox-label checkbox-label-bedroom">
+                            <input
+                                class="checkbox checkbox-purpose"
+                                type="checkbox"
+                                name="type"
+                                id="bedroom"
+                                value="спальня"
+                            />
+                            <span class="button">Спальня</span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-livingroom">
+                            <input
+                                class="checkbox checkbox-purpose"
+                                type="checkbox"
+                                name="type"
+                                id="livingroom"
+                                value="гостиная"
+                            />
+                            <span class="button">Гостиная</span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-diningroom">
+                            <input
+                                class="checkbox checkbox-purpose"
+                                type="checkbox"
+                                name="type"
+                                id="diningroom"
+                                value="столовая"
+                            />
+                            <span class="button">Столовая</span>
+                        </label>
+                    </div>
                 </div>
+
+                <div class="checkbox-color-container">
+                    <p class="checkbox-color__title">Цвет:</p>
+
+                    <div class="label-container label-container-color">
+                        <label class="checkbox-label checkbox-label-white">
+                            <input
+                                class="checkbox checkbox-color"
+                                type="checkbox"
+                                name="color"
+                                id="white"
+                                value="белый"
+                            />
+                            <span class="button-color button-white"></span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-yellow">
+                            <input
+                                class="checkbox checkbox-color"
+                                type="checkbox"
+                                name="color"
+                                id="yellow"
+                                value="желтый"
+                            />
+                            <span class="button-color button-yellow"></span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-brown">
+                            <input
+                                class="checkbox checkbox-color"
+                                type="checkbox"
+                                name="color"
+                                id="brown"
+                                value="коричневый"
+                            />
+                            <span class="button-color button-brown"></span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-black">
+                            <input
+                                class="checkbox checkbox-color"
+                                type="checkbox"
+                                name="color"
+                                id="black"
+                                value="черный"
+                            />
+                            <span class="button-color button-black"></span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-blue">
+                            <input
+                                class="checkbox checkbox-color"
+                                type="checkbox"
+                                name="color"
+                                id="blue"
+                                value="синий"
+                            />
+                            <span class="button-color button-blue"></span>
+                        </label>
+
+                        <label class="checkbox-label checkbox-label-grey">
+                            <input
+                                class="checkbox checkbox-color"
+                                type="checkbox"
+                                name="color"
+                                id="grey"
+                                value="серый"
+                            />
+                            <span class="button-color button-grey"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <p class="slider__label slider__label_price">Цена:</p>
+                    <div class="slider slider_price"></div>
+
+                    <div class="slider__values-container">
+                        <div class="slider__value slider__value_min">100</div>
+                        <div class="slider__value slider__value_max">100000</div>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <p class="slider__label slider__label_year">Год:</p>
+                    <div class="slider slider_year"></div>
+
+                    <div class="slider__values-container">
+                        <div class="slider__value slider__year_min">100</div>
+                        <div class="slider__value slider__year_max">100000</div>
+                    </div>
+                </div>
+
+                <div class="checkbox-popular-container">
+                    <div class="label-container label-container-popular">
+                        <p class="checkbox-popular__title">Только популярные:</p>
+                        <label class="checkbox-label checkbox-label-popular">
+                            <input
+                                class="checkbox checkbox-popular"
+                                type="checkbox"
+                                name="popular"
+                                id="popular"
+                                value=""
+                            />
+                            <span class="button-popular"> </span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="button button_reset resetFilters">Сброс фильтров</button>
+                <button class="button button_reset resetLocalStorage">Сброс настроек</button>
             </div>
 
             <section class="catalog">

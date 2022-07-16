@@ -11,7 +11,7 @@ export const notification: () => void = () => {
     const notificationWindow = document.createElement('div');
     notificationWindow.classList.add('notification-window');
     notificationWindow.style.opacity = '1';
-    notificationWindow.innerText = 'Извините, нельзя добавить в корзину более 3 товаров';
+    notificationWindow.innerText = 'Извините, нельзя добавить в корзину более 10 товаров';
     document.body.appendChild(notificationWindow);
 
     const closeButton = document.createElement('div');

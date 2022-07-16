@@ -2,7 +2,6 @@
  * Добавляет в localStorage.popularFilter отмеченный чекбоксы
  */
 
-import { consoleFilters } from '../utils/consoleFilters';
 import { showFinalItems } from '../showFinalItems';
 
 export const addPopularFilter: () => void = () => {
@@ -22,7 +21,5 @@ export const addPopularFilter: () => void = () => {
         localStorage.setItem('popularFilter', newPopularFilter);
 
         showFinalItems();
-
-        consoleFilters();
     });
 };

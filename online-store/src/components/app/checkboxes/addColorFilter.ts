@@ -2,7 +2,6 @@
  * Добавляет в localStorage.colorFilter выбранные чекбоксы
  */
 
-import { consoleFilters } from '../utils/consoleFilters';
 import { showFinalItems } from '../showFinalItems';
 
 export const addColorFilter: () => void = () => {
@@ -46,8 +45,6 @@ export const addColorFilter: () => void = () => {
             localStorage.setItem('colorFilter', JSON.stringify(newColorFilter));
 
             showFinalItems();
-
-            consoleFilters();
         });
     });
 };

@@ -5,7 +5,6 @@
 import { requestFunction } from '../requestFunction';
 import { resetLocalStorage } from '../resetLocalStorage';
 import { showCartItemsQuantity } from '../visualAndInputs/showCartItemsQuantity';
-import { consoleFilters } from '../utils/consoleFilters';
 
 export const addResetStorageButtonFunctionality: () => void = () => {
     const ResetLocalStorageButton = document.querySelector('.resetLocalStorage') as HTMLButtonElement;
@@ -24,7 +23,5 @@ export const addResetStorageButtonFunctionality: () => void = () => {
         showCartItemsQuantity();
 
         requestFunction();
-
-        consoleFilters();
     });
 };

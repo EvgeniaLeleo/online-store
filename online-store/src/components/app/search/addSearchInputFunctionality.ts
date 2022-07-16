@@ -12,9 +12,6 @@ export const addSearchInputFunctionality: () => void = () => {
     searchInput.addEventListener('input', () => {
         const searchQuery = searchInput.value;
         localStorage.setItem('searchQuery', searchQuery);
-
-        getSearchQueryArray(searchInput);
-
         showFinalItems();
     });
 };
