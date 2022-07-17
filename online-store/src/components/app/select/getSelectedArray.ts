@@ -5,7 +5,7 @@
 import { TData } from '../types';
 
 export const getSelectedArray: (selectInput: HTMLSelectElement) => TData[] = (selectInput) => {
-    const initialData = localStorage.getItem('initialData') || '';
+    const initialData = localStorage.getItem('initialData') || '[]';
     const initialDataArray: TData[] = JSON.parse(initialData);
     let sortedArray: TData[] = [];
 

@@ -1,7 +1,7 @@
-import { commonCheckedItems } from '../src/components/app/checkboxes/commonCheckedItems';
+import { getSearchQueryArray } from '../src/components/app/search/getSearchQueryArray';
 
-describe('commonCheckedItems()', () => {
-    it('should find an intersection array of common items of several arrays', () => {
+describe('getSearchQueryArray()', () => {
+    it('should return an array of items corresponding to search query', () => {
         const data = [
             {
                 name: 'RONALD диван',
@@ -150,6 +150,11 @@ describe('commonCheckedItems()', () => {
             },
         ];
 
+        localStorage.setItem('initialData', JSON.stringify(data));
+
+        const searchInput = document.createElement('input');
+        searchInput.value = 'ron';
+
         const expectedResult = [
             {
                 name: 'RONALD диван',
@@ -165,7 +170,7 @@ describe('commonCheckedItems()', () => {
             },
         ];
 
-        const result = commonCheckedItems(data);
+        const result = getSearchQueryArray(searchInput);
 
         expect(expectedResult).toEqual(result);
     });
