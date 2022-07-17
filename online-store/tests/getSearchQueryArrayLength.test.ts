@@ -1,7 +1,7 @@
 import { getSearchQueryArray } from '../src/components/app/search/getSearchQueryArray';
 
 describe('getSearchQueryArray()', () => {
-    it('should return an array of items corresponding to search query "as"', () => {
+    it('should return an array of 3 items corresponding to search query "диван"', () => {
         const data = [
             {
                 name: 'RONALD диван',
@@ -153,61 +153,10 @@ describe('getSearchQueryArray()', () => {
         localStorage.setItem('initialData', JSON.stringify(data));
 
         const searchInput = document.createElement('input');
-        searchInput.value = 'as';
-
-        const expectedResult = [
-            {
-                name: 'ASKESTA диван',
-                img: './static/sofa-askesta.jpg',
-                price: '68000',
-                description: 'Благодаря защелкивающемуся механизму диван легко раскладывается в комфортную кровать',
-                type: 'диван',
-                purpose: 'гостиная',
-                color: 'серый',
-                quantity: '5',
-                date: '2021',
-                popular: 'да',
-            },
-            {
-                name: 'NASTAN шкаф',
-                img: './static/wardrobe-nastan.jpg',
-                price: '81000',
-                description: 'Мебель может быть оснащена разнообразными системами подсветки',
-                type: 'шкаф',
-                purpose: 'спальня',
-                color: 'коричневый',
-                quantity: '3',
-                date: '2020',
-                popular: 'нет',
-            },
-            {
-                name: 'ASKESTA кресло',
-                img: './static/armchair-askesta.jpg',
-                price: '50000',
-                description: 'Высокоэластичный пенополиуретан в «начинке» кресла надежен и долговечен',
-                type: 'кресло',
-                purpose: 'гостиная',
-                color: 'синий',
-                quantity: '10',
-                date: '2021',
-                popular: 'нет',
-            },
-            {
-                name: 'NASTAN диван',
-                img: './static/sofa-nastan.jpg',
-                price: '79000',
-                description: 'Модель отличается простотой линий и форм, отсутствием броского декора',
-                type: 'диван',
-                purpose: 'гостиная',
-                color: 'серый',
-                quantity: '2',
-                date: '2022',
-                popular: 'да',
-            },
-        ];
+        searchInput.value = 'диван';
 
         const result = getSearchQueryArray(searchInput);
 
-        expect(expectedResult).toEqual(result);
+        expect(result).toHaveLength(3);
     });
 });
