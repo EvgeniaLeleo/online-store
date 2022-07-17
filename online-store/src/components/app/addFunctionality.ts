@@ -1,5 +1,5 @@
 /**
- * Добавление основного функционала фильтров, сортировки и поиска
+ * Добавление основного функционала фильтров, сортировки и поиска, содержимое корзины
  */
 
 import { addColorFilter } from './checkboxes/addColorFilter';
@@ -10,6 +10,7 @@ import { addSearchInputFunctionality } from './search/addSearchInputFunctionalit
 import { addSelectFunctionality } from './select/addSelectFunctionality';
 import { addSliderPriceFunctionality } from './sliders/addSliderPriceFunctionality';
 import { addSliderYearFunctionality } from './sliders/addSliderYearFunctionality';
+import { showCartContent } from './visualAndInputs/showCartContent';
 
 export const addFunctionality: () => void = () => {
     addSearchInputFunctionality();
@@ -21,4 +22,6 @@ export const addFunctionality: () => void = () => {
     addPurposeFilter();
     addColorFilter();
     addPopularFilter();
+
+    showCartContent();
 };
