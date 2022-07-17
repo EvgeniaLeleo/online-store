@@ -6,13 +6,7 @@ import { TData } from '../types';
 import { commonItems } from '../utils/commonItems';
 
 export const commonCheckedItems: (data: TData[]) => TData[] = (data) => {
-    let tempArray: TData[] = [];
-
-    const initialData = localStorage.getItem('initialData');
-
-    if (initialData) {
-        tempArray = JSON.parse(initialData);
-    }
+    let tempArray: TData[] = data;
 
     if (typeFilterArray(data).length !== 0) {
         tempArray = commonItems(tempArray, typeFilterArray(data));
