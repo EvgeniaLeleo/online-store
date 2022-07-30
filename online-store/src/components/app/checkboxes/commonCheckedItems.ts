@@ -8,19 +8,19 @@ import { commonItems } from '../utils/commonItems';
 export const commonCheckedItems: (data: TData[]) => TData[] = (data) => {
     let tempArray: TData[] = data;
 
-    if (typeFilterArray(data).length !== 0) {
+    if (typeFilterArray(data).length) {
         tempArray = commonItems(tempArray, typeFilterArray(data));
     }
 
-    if (purposeFilterArray(data).length !== 0) {
+    if (purposeFilterArray(data).length) {
         tempArray = commonItems(tempArray, purposeFilterArray(data));
     }
 
-    if (colorFilterArray(data).length !== 0) {
+    if (colorFilterArray(data).length) {
         tempArray = commonItems(tempArray, colorFilterArray(data));
     }
 
-    if (popularFilterArray(data).length !== 0) {
+    if (popularFilterArray(data).length) {
         tempArray = commonItems(tempArray, popularFilterArray(data));
     }
 

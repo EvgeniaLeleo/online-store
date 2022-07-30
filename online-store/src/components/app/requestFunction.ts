@@ -6,24 +6,19 @@ import { TData } from './types';
 import { showFinalItems } from './showFinalItems';
 import { addFunctionality } from './addFunctionality';
 
-export const requestFunction: () => void = () => {
-    const request = new XMLHttpRequest();
+export const requestFunction: () => void = async () => {
+    const request = await fetch('./static/data.json');
 
-    request.open('GET', './static/data.json');
+    if (request.ok) {
+        const json = await request.json();
+        const data: TData[] = JSON.parse(json);
 
-    request.send();
+        localStorage.setItem('initialData', JSON.stringify(data));
 
-    request.onload = function () {
-        if (request.status !== 200) {
-            console.error('Не удалось получить данные!');
-        } else {
-            const data: TData[] = JSON.parse(request.response);
+        addFunctionality();
 
-            localStorage.setItem('initialData', JSON.stringify(data));
-
-            addFunctionality();
-
-            showFinalItems();
-        }
-    };
+        showFinalItems();
+    } else {
+        console.error('Не удалось получить данные!');
+    }
 };
