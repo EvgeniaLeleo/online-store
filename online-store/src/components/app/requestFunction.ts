@@ -2,7 +2,6 @@
  * Запрос данных из файла data.json и вывод их на текущую страницу в карточки
  */
 
-import { TData } from './types';
 import { showFinalItems } from './showFinalItems';
 import { addFunctionality } from './addFunctionality';
 
@@ -11,9 +10,8 @@ export const requestFunction: () => void = async () => {
 
     if (request.ok) {
         const json = await request.json();
-        const data: TData[] = JSON.parse(json);
 
-        localStorage.setItem('initialData', JSON.stringify(data));
+        localStorage.setItem('initialData', JSON.stringify(json));
 
         addFunctionality();
 
