@@ -1,23 +1,26 @@
-# evgenialeleo-JSFE2022Q1
+Demo: [https://evgenialeleo.github.io/online-store/](https://evgenialeleo.github.io/online-store/)
 
-Private repository for @evgenialeleo
+## Установка
 
-My GiiHub: https://github.com/evgenialeleo
+Склонируйте репозиторий и установите зависимости
 
-Completed tasks:
+```sh
+cd online-store
+npm install
+```
 
-1. Shelter [https://github.com/rolling-scopes-school/tasks/blob/master/stage1/stream1/shelter/README.md](https://github.com/rolling-scopes-school/tasks/blob/master/stage1/stream1/shelter/README.md)
+Для запуска сервера в development-режиме выполните команду
 
-Deploy: [https://rolling-scopes-school.github.io/evgenialeleo-JSFE2022Q1/shelter/pages/main/](https://rolling-scopes-school.github.io/evgenialeleo-JSFE2022Q1/shelter/pages/main/)
+```sh
+npm run start
+```
 
-2. Self-introduction [https://github.com/rolling-scopes-school/tasks/tree/master/stage1/modules/self-introduction](https://github.com/rolling-scopes-school/tasks/tree/master/stage1/modules/self-introduction)
+При необходимости production сборки выполните команду
 
-Video: [https://youtu.be/WC3XF447luk](https://youtu.be/WC3XF447luk)
+```sh
+npm run build
+```
 
-3. News API [https://github.com/rolling-scopes-school/tasks/blob/master/tasks/migration-newip-to-ts.md](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/migration-newip-to-ts.md)
+## ТЗ
 
-Deploy: [https://rolling-scopes-school.github.io/evgenialeleo-JSFE2022Q1/migration-newip-to-ts/](https://rolling-scopes-school.github.io/evgenialeleo-JSFE2022Q1/migration-newip-to-ts/)
-
-4. Online-store [https://github.com/rolling-scopes-school/tasks/blob/master/tasks/online-store/README.md](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/online-store/README.md)
-
-Deploy: [https://rolling-scopes-school.github.io/evgenialeleo-JSFE2022Q1/online-store/](https://rolling-scopes-school.github.io/evgenialeleo-JSFE2022Q1/online-store/)
+Online-store [https://github.com/rolling-scopes-school/tasks/blob/master/tasks/online-store/README.md](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/online-store/README.md)

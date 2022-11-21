@@ -2,13 +2,14 @@
  * Выводит карточки товара, соответствующие данным LocalStorage, а при их отсутствии делает запрос и выводит новые данные
  */
 
+import * as noUiSlider from 'nouislider';
+
 import { checkCheckboxesFromLocalStorage } from './visualAndInputs/checkCheckboxesFromLocalStorage';
 import { requestFunction } from './requestFunction';
 import { resetLocalStorage } from './resetLocalStorage';
 import { showCartItemsQuantity } from './visualAndInputs/showCartItemsQuantity';
 import { showFinalItems } from './showFinalItems';
 import { addFunctionality } from './addFunctionality';
-import * as noUiSlider from 'nouislider';
 
 export const generateActualContent: () => void = () => {
     const initialData = localStorage.getItem('initialData');

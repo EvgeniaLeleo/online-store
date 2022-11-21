@@ -2,8 +2,9 @@
  * Добавление функциональности кнопки сброса фильтров
  */
 
-import { showFinalItems } from '../showFinalItems';
 import * as noUiSlider from 'nouislider';
+
+import { showFinalItems } from '../showFinalItems';
 
 export const addResetFiltersButtonFunctionality: () => void = () => {
     const ResetFiltersButton = document.querySelector('.resetFilters') as HTMLButtonElement;

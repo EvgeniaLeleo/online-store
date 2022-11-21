@@ -2,8 +2,9 @@
  * Функционал слайдера цены
  */
 
-import { showFinalItems } from '../showFinalItems';
 import * as noUiSlider from 'nouislider';
+
+import { showFinalItems } from '../showFinalItems';
 
 export const addSliderYearFunctionality: () => void = () => {
     const sliderYear = document.querySelector('.slider_year') as noUiSlider.target;

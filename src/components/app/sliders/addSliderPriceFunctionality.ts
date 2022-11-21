@@ -2,8 +2,9 @@
  * Функционал слайдера цены
  */
 
-import { showFinalItems } from '../showFinalItems';
 import * as noUiSlider from 'nouislider';
+
+import { showFinalItems } from '../showFinalItems';
 
 export const addSliderPriceFunctionality: () => void = () => {
     const sliderPrice = document.querySelector('.slider_price') as noUiSlider.target;

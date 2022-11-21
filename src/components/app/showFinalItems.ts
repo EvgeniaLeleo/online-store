@@ -1,13 +1,13 @@
 /**
  * Генерация окончательного массива, соответствующего всем запросам и фильтрам
  */
+import * as noUiSlider from 'nouislider';
 
 import { showCards } from './card/showCards';
 import { commonCheckedItems } from './checkboxes/commonCheckedItems';
 import { getSearchQueryArray } from './search/getSearchQueryArray';
 import { getSelectedArray } from './select/getSelectedArray';
 import { commonItems } from './utils/commonItems';
-import * as noUiSlider from 'nouislider';
 import { getPriceRangeArray } from './sliders/getPriceRangeArray';
 import { getYearRangeArray } from './sliders/getYearRangeArray';
 
